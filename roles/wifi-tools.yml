@@ -11,3 +11,4 @@
  
 - name: "Package: gnuradio"
   yum: name="gnuradio" state=present
+  tags: gui
