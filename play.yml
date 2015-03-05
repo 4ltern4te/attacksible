@@ -10,10 +10,10 @@
   # Still need quite a few sections
 
   - include: roles/common.yml
-
-  - include: roles/communication-tools.yml
   
   - include: roles/system-packages.yml
+
+  - include: roles/communication-tools.yml
 
   - include: roles/handy-tools.yml
 
