@@ -1,5 +1,5 @@
 - name: "Create wordlists directory"
-  file: path={{ tools_root }}/wordlists owner=root state=directory mode=0700
+  file: path={{ tools_root }}/wordlists owner=root state=directory mode=0755
 
 - name: "Download wordlists"
   command: /tmp/mega-dl.sh {{ item }} chdir={{ tools_root }}/wordlists 

@@ -2,7 +2,9 @@
   # Remove info leakage via DHCP
   # Intense firewall rules / honeypot setup to avoid OS profiling
   - name: "Package: tor"
-    yum: pkg=tor state=latest
+    yum: pkg={{ item }} state=latest
+    with_items:
+      - tor
  
   - name: "Package: proxychains"
     yum: name="proxychains" state=present
