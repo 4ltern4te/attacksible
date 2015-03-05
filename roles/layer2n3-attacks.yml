@@ -1,0 +1,18 @@
+  # Layer 2/3 and Router Proto Attacks
+  - name: "Package: yersinia"
+    yum: name="yersinia" state=present
+ 
+  - name: "Package: sipp"
+    yum: name="sipp" state=present
+ 
+  - name: "Package: sipsak"
+    yum: name="sipsak" state=present
+
+  - name: "Package: wol"
+    yum: name="wol" state=present
+ 
+  - name: "Package: sslsplit"
+    yum: name="sslsplit" state=present
+
+  - name: "Package: sslstrip"
+    yum: name="sslstrip" state=present

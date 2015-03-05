@@ -1,0 +1,9 @@
+  # Reverse Engineering / Decompilers
+  - name: "Package: edb"
+    yum: name="edb" state=present
+ 
+  - name: "Package: binwalk"
+    yum: name="binwalk" state=present
+ 
+  - name: "Package: flasm"
+    yum: name="flasm" state=present

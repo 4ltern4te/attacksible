@@ -1,0 +1,7 @@
+  # RFID
+  - name: "Package: libnfc"
+    yum: name="libnfc" state=present
+ 
+  - name: "Package: libnfc-examples"
+    yum: name=libnfc-examples state=present
+

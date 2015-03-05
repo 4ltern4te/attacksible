@@ -1,0 +1,13 @@
+# Wireless 
+
+- name: "Package: aircrack-ng"
+  yum: name="aircrack-ng" state=present
+ 
+- name: "Package: hostapd"
+  yum: name="hostapd" state=present
+
+- name: "Package: kismet"
+  yum: name="kismet" state=present
+ 
+- name: "Package: gnuradio"
+  yum: name="gnuradio" state=present

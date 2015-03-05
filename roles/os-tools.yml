@@ -1,0 +1,4 @@
+  # OS profiling 
+  - name: "Package: p0f"
+    yum: name="p0f" state=present
+

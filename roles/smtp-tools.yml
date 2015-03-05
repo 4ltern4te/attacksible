@@ -1,0 +1,4 @@
+  # SMTP
+  - name: "Package: swaks"
+    yum: name="swaks" state=present
+

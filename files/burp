@@ -1,0 +1,10 @@
+#!/bin/bash
+
+JAVA=`which java`
+
+if [ -e $JAVA ]; then
+	java -jar -Xmx1024m /opt/attacksible/exploit-tools/burp/burpsuite_free_v1.5.jar
+else
+	echo "[!] Can't locate java."
+	exit 1
+fi 

@@ -1,0 +1,15 @@
+  # Network Sniffing
+  - name: "Package: tcpflow"
+    yum: name="tcpflow" state=present
+
+  - name: "Package: tcpreplay"
+    yum: name="tcpreplay" state=present
+
+  - name: "Package: wireshark"
+    yum: name="wireshark" state=present
+ 
+  - name: "Package: dsniff"
+    yum: name="dsniff" state=present
+ 
+  - name: "Package: ettercap"
+    yum: name="ettercap" state=present

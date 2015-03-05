@@ -1,0 +1,19 @@
+# DNS
+
+- name: "Create dnstools directory"
+  file: path={{ tools_root }}/dnstools owner=root state=directory mode=0700
+
+- name: "Package: dnsmap"
+  yum: name="dnsmap" state=present
+
+- name: "Package: dnstracer"
+  yum: name="dnstracer" state=present
+ 
+- name: "Package: dnsenum"
+  yum: name="dnsenum" state=present
+ 
+- name: "Package: lbd"
+  yum: name="lbd" state=present
+
+- name: "Git: dnsrecon"
+  git: repo=https://github.com/darkoperator/dnsrecon.git dest={{ tools_root }}/dnstools/dnsrecon/

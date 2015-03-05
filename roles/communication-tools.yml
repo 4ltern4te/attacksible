@@ -1,0 +1,4 @@
+# IRC clients etc
+
+- name: "Package: weechat"
+  yum: name=weechat state=present

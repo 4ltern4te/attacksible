@@ -1,2 +1,4 @@
-# attacksible
-Ansible Provisioned Security Testing Platform
+Usage
+-----
+
+    ansible-playbook play.yml -i attacksible --connection=local -K

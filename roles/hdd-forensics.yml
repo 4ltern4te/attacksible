@@ -1,0 +1,27 @@
+  # Hard Drive Fornsics
+  - name: "Package: dc3dd"
+    yum: name="dc3dd" state=present
+ 
+  - name: "Package: dcfldd"
+    yum: name="dcfldd" state=present
+ 
+  - name: "Package: ddrescue"
+    yum: name="ddrescue" state=present
+ 
+  - name: "Package: extundelete"
+    yum: name="extundelete" state=present
+ 
+  - name: "Package: foremost"
+    yum: name="foremost" state=present
+ 
+  - name: "Package: safecopy"
+    yum: name="safecopy" state=present
+ 
+  - name: "Package: scalpel"
+    yum: name="scalpel" state=present
+ 
+  - name: "Package: recoverjpeg"
+    yum: name="recoverjpeg" state=present
+
+  - name: "Package: testdisk"
+    yum: name=testdisk state=present

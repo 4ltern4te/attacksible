@@ -1,0 +1,5 @@
+  # Hardware Hacking
+  - name: "Package: arduino"
+    yum: name="arduino" state=present
+  - name: "Package: minicom"
+    yum: name="arduino" state=present

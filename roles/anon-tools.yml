@@ -1,0 +1,18 @@
+  # Annonimity
+  # Remove info leakage via DHCP
+  # Intense firewall rules / honeypot setup to avoid OS profiling
+  - name: "Package: tor"
+    yum: pkg=tor state=latest
+ 
+  - name: "Package: proxychains"
+    yum: name="proxychains" state=present
+ 
+  - name: "Package: proxytunnel"
+    yum: name="proxytunnel" state=present
+ 
+  - name: "Package: stunnel"
+    yum: name="stunnel" state=present
+ 
+  - name: "Package: iodine"
+    yum: name="iodine" state=present
+

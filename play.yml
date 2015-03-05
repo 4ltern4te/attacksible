@@ -1,0 +1,56 @@
+--- 
+- hosts: attacksible
+  sudo: yes
+  tasks:
+
+  # Install: roles/ansible-playbook play.yml --list-hosts
+  #  ansible-playbook play.yml 
+
+  # Wrote this for Fedora 19/20
+  # Still need quite a few sections
+
+  - include: roles/common.yml
+
+  - include: roles/communication-tools.yml
+  
+  - include: roles/system-packages.yml
+
+  - include: roles/handy-tools.yml
+
+  - include: roles/network-discovery.yml
+
+  - include: roles/web-scanning.yml 
+  
+  - include: roles/dns-tools.yml
+  
+  - include: roles/smtp-tools.yml
+
+  - include: roles/os-tools.yml
+
+  - include: roles/exploit-tools.yml
+
+  - include: roles/exploit-db.yml 
+ 
+  - include: roles/anon-tools.yml
+
+  - include: roles/network-sniffing.yml
+  
+  - include: roles/layer2n3-attacks.yml
+
+  - include: roles/password-cracking.yml
+
+  - include: roles/wifi-tools.yml 
+
+  - include: roles/rfid.yml
+
+  - include: roles/hardware.yml 
+
+  - include: roles/reverse.yml
+
+  - include: roles/hdd-forensics.yml
+
+  - include: roles/wordlists.yml
+
+  - include: roles/exploit-dev.yml
+    vars: 
+        local_user: "{{ lookup('env','USER') }}"
