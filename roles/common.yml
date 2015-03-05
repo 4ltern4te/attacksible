@@ -2,7 +2,7 @@
   file: path={{ tools_root }} state=absent
 
 - name: "Create a directory tree in /opt"
-  file: path={{ tools_root }} state=directory owner=root group=root mode=0700
+  file: path={{ tools_root }} state=directory owner=root group=root mode=0755
 
 - name: "Copy: mega.co.nz downloader"
   copy: src=mega-dl.sh dest=/tmp/ owner=root group=root mode=0750

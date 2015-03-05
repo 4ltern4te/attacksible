@@ -29,10 +29,12 @@
 
 - name: "Package: recordmydesktop"
   yum: name="recordmydesktop" state=present
+  tags: gui
 
 - name: "Package: tcplay"
   yum: name="tcplay" state=present
 
 - name: "Package: keepassx"
   yum: name="keepassx" state=present
+  tags: gui
 
