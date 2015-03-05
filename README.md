@@ -8,7 +8,7 @@ Near future improvments:
 * More funky tools
 * Install of the software from the git repos pulled in
 
-Instal
+Install
 -----
 
     yum install ansible
