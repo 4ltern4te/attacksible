@@ -16,7 +16,7 @@
     - ipcalculator
     - ike
     - tcplay
-  when: ansible_distribution="Fedora"
+  when: ansible_distribution == 'Fedora'
 
 - name: "Handy tools for Desktops"
   yum: name={{ item }} state=present
