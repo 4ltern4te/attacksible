@@ -17,6 +17,7 @@
     - postgresql
     - python
     - python-pip
+    - ruby-devel
     - rubygem-bundler
     - java-openjdk
     - net-snmp-utils
