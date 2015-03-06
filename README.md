@@ -1,11 +1,11 @@
 #Attacksible
 Ansible provisioned security platform for RPM based systems.
 
-### Tested on
-- Fedora 21
-- Centos 7
+Tested on:
+* Fedora 21
+* Centos 7
 
-Near future improvments:
+Near future improvements:
 * APT based system support
 * More funky tools
 * Install of the software from the git repos pulled in
