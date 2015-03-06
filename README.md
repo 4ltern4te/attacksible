@@ -1,4 +1,5 @@
-#Attacksible
+[[doc/attacksible.jpg]]
+
 Ansible provisioned security platform for RPM based systems.
 
 The first commit was written for Fedora 21.
