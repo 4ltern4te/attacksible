@@ -64,3 +64,8 @@
     - pylibpcap
     - libpcap
     - libpcap-devel
+
+- name: "Package: p7zip"
+  yum: name=p7zip state=present
+
+

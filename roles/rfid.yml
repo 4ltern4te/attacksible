@@ -5,3 +5,6 @@
   - name: "Package: libnfc-examples"
     yum: name=libnfc-examples state=present
 
+  - name: "nfc-tools"
+    subversion: repo=http://nfc-tools.googlecode.com/svn/trunk/ dest={{ tools_root }}/rfid/nfc-tools
+    tags: untested
