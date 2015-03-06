@@ -25,6 +25,7 @@
     - libpcap
     - libpcap-devel
     - p7zip
+    - zlib-devel
 
 - name: "Fedora-only sys-packages"
   yum: name={{ item }} state=present
