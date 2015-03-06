@@ -1,6 +1,9 @@
   # Network Sniffing
-  - name: "Package: tcpflow"
-    yum: name="tcpflow" state=present
+  - name: "Network Sniffing - fedora-only packages"
+    yum: name={{ item }} state=present
+    with_items:
+      - tcpflow
+    when: ansible_distribution == 'Fedora'
 
   - name: "Package: tcpreplay"
     yum: name="tcpreplay" state=present

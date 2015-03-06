@@ -10,10 +10,8 @@
     yum: name={{ item }} state=present
     with_items:
       - proxychains
+      - proxytunnel
     when: ansible_distribution == 'Fedora'
- 
-  - name: "Package: proxytunnel"
-    yum: name="proxytunnel" state=present
  
   - name: "Package: stunnel"
     yum: name="stunnel" state=present
