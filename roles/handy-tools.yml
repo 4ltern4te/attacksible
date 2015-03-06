@@ -9,13 +9,13 @@
     - socat
     - ngrep
     - md5deep
-    - ike
     - tcplay
 
 - name: "Handy tools only available in Fedora"
   yum: name={{ item }} state=present
     - macchanger
     - ipcalculator
+    - ike
   when: ansible_distribution="Fedora"
 
 - name: "Handy tools for Desktops"
