@@ -49,6 +49,3 @@
 - name: "Git: wfuzz"
   git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/info-discovery/wfuzz
 
-- name: ""
-  subversion: repo=https://code.google.com/p/miranda-upnp dest={{ tools_root }}/network-discovery/miranda-upnp
-  tags: untested
