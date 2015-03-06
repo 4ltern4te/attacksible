@@ -10,10 +10,8 @@
   yum: name={{ item }} state=present
   with_items:
     - dnstracer
+    - dnsenum
   when: ansible_distribution == 'Fedora'
- 
-- name: "Package: dnsenum"
-  yum: name="dnsenum" state=present
  
 - name: "Package: lbd"
   yum: name="lbd" state=present

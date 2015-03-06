@@ -1,4 +1,7 @@
   # OS profiling 
-  - name: "Package: p0f"
-    yum: name="p0f" state=present
+  - name: "OS profiling packages - Fedora only"
+    yum: name={{ item }} state=present
+    with_items:
+      - p0f
+    when: ansible_distribution == 'Fedora'
 
