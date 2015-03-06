@@ -12,3 +12,11 @@
 - name: "Package: gnuradio"
   yum: name="gnuradio" state=present
   tags: gui
+
+- name: "wifite"
+  git: repo=https://github.com/derv82/wifite dest={{ tools_root }}/wifi-tools/wifite
+  tags: untested
+
+- name: "reaver-wps"
+  subversion: repo=http://reaver-wps.googlecode.com/svn/trunk/ dest={{ tools_root }}/wifi-tools/reaver-wps
+  tags: untested
