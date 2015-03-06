@@ -1,71 +1,40 @@
 # System Packages / Dev Packages
 # Firewall rules / Antivirus / Logging / OS House clean / System Debug Tools
 
-- name: "Development Tools"
-  yum: name="@Development tools" state=present
-
-- name: "Package: clang"
-  yum: name="clang" state=present
-
-- name: "Package: dhcp"
-  yum: name="dhcp" state=present
-
-- name: "Package: pth"
-  yum: name="pth" state=present
-
-- name: "Package: ClamAV"
-  yum: name=clamav state=present
-
-- name: "Package: ferm"
-  yum: name=ferm state=present
-
-- name: "Package: htop"
-  yum: name=htop state=present
-
-- name: "Package: lighttpd"
-  yum: name=lighttpd state=present
-
-- name: "Package: postgresql"
+- name: "System packages"
   yum: name={{ item }} state=present
   with_items:
+    - '"@Development tools"'
+    - clang
+    - dhcp
+    - pth
+    - clamav
+    - ferm
+    - htop
+    - lighttpd
     - postgresql-server
     - postgresql-devel
     - postgresql
+    - python
+    - python-pip
+    - java-openjdk
+    - net-snmp-utils
+    - vim-enhanced
+    - libpcap
+    - libpcap-devel
+    - p7zip
 
-- name: "Package: Python"
-  yum: name=python state=present
+- name: "Fedora-only sys-packages"
+  yum: name={{ item }} state=present
+  with_items:
+    - tsocks
+    - pylibpcap
+  when: ansible_distribution == 'Fedora'
 
-- name: "Package: Python Pip"
-  yum: name=python-pip state=present
-
-- name: "Package: java-1.8.0-openjdk"
-  yum: name=java-1.8.0-openjdk state=present
-
-- name: "Package: net-snmp-utils"
-  yum: name=net-snmp-utils state=present
-
-- name: "Package: vim"
-  yum: name=vim-enhanced state=present
-
-- name: "Package: terminator"
+- name: "GUI environment sys-packages"
   yum: name=terminator state=present
   tags: gui
 
-- name: "Package: tsocks"
-  yum: name=tsocks state=present
-
-- name: "RPM: Keepnote"
+- name: "Untested sys-packages"
   yum: name=http://keepnote.org/download/keepnote-0.7.8-1.noarch.rpm state=present
   tags: untested
-
-- name: "Package: libpcap"
-  yum: name={{ item }} state=present
-  with_items:
-    - pylibpcap
-    - libpcap
-    - libpcap-devel
-
-- name: "Package: p7zip"
-  yum: name=p7zip state=present
-
-

@@ -1,40 +1,26 @@
 # Tools
 #
-- name: "Package: cadaver"
-  yum: name=cadaver state=present
+- name: "Handy Tools"
+  yum: name={{ item }} state=present
+  with_items:
+    - cadaver
+    - tmux
+    - screen
+    - socat
+    - ngrep
+    - md5deep
 
-- name: "Package: tmux"
-  yum: name=tmux state=present
+- name: "Handy tools only available in Fedora"
+  yum: name={{ item }} state=present
+    - macchanger
+    - ipcalculator
+    - ike
+    - tcplay
+  when: ansible_distribution == 'Fedora'
 
-- name: "Package: screen"
-  yum: name=screen state=present
-
-- name: "Package: socat"
-  yum: name="socat" state=present
-
-- name: "Package: ipcalculator"
-  yum: name="ipcalculator" state=present
-
-- name: "Package: macchanger"
-  yum: name="macchanger" state=present
-
-- name: "Package: ngrep"
-  yum: name="ngrep" state=present
-
-- name: "Package: md5deep"
-  yum: name="md5deep" state=present
-
-- name: "Package: ike"
-  yum: name="ike" state=present
-
-- name: "Package: recordmydesktop"
-  yum: name="recordmydesktop" state=present
+- name: "Handy tools for Desktops"
+  yum: name={{ item }} state=present
+  with_items:
+    - recordmydesktop
+    - keepassx
   tags: gui
-
-- name: "Package: tcplay"
-  yum: name="tcplay" state=present
-
-- name: "Package: keepassx"
-  yum: name="keepassx" state=present
-  tags: gui
-
