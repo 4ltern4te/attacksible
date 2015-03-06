@@ -17,6 +17,7 @@
     - postgresql
     - python
     - python-pip
+    - rubygem-bundler
     - java-openjdk
     - net-snmp-utils
     - vim-enhanced
