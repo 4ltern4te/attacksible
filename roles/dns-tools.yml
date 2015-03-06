@@ -6,8 +6,11 @@
 - name: "Package: dnsmap"
   yum: name="dnsmap" state=present
 
-- name: "Package: dnstracer"
-  yum: name="dnstracer" state=present
+- name: "DNS tools - Fedora-only packages"
+  yum: name={{ item }} state=present
+  with_items:
+    - dnstracer
+  when: ansible_distribution == 'Fedora'
  
 - name: "Package: dnsenum"
   yum: name="dnsenum" state=present
