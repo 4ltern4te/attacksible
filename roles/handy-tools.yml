@@ -7,14 +7,15 @@
     - tmux
     - screen
     - socat
-    - macchanger
     - ngrep
     - md5deep
     - ike
     - tcplay
 
 - name: "Handy tools only available in Fedora"
-  yum: name="ipcalculator" state=present
+  yum: name={{ item }} state=present
+    - macchanger
+    - ipcalculator
   when: ansible_distribution="Fedora"
 
 - name: "Handy tools for Desktops"
