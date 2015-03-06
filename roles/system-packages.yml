@@ -4,7 +4,7 @@
 - name: "System packages"
   yum: name={{ item }} state=present
   with_items:
-    - "@Development tools"
+    - '"@Development tools"'
     - clang
     - dhcp
     - pth
