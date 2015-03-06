@@ -3,19 +3,11 @@
     yum: name={{ item }} state=present
     with_items:
       - yersina
+      - sipp
+      - sipsak
+      - wol
+      - sslstrip
     when: ansible_distribution == 'Fedora'
- 
-  - name: "Package: sipp"
-    yum: name="sipp" state=present
- 
-  - name: "Package: sipsak"
-    yum: name="sipsak" state=present
-
-  - name: "Package: wol"
-    yum: name="wol" state=present
  
   - name: "Package: sslsplit"
     yum: name="sslsplit" state=present
-
-  - name: "Package: sslstrip"
-    yum: name="sslstrip" state=present
