@@ -20,12 +20,11 @@
   yum: name={{ item }} state=present                                                                                                                
   with_items:
     - nbtscan
+    - intrace
   when: ansible_distribution == 'Fedora'
 
 - name: "Package: hping3"
   yum: name="hping3" state=present                                                                                                                 
-- name: "Package: intrace"
-  yum: name="intrace" state=present
 
 - name: "File: fierce.pl"
   copy: src=fierce.pl dest={{ tools_root }}/info-discovery/

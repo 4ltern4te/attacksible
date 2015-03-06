@@ -1,6 +1,8 @@
   # Web Scanning
-  - name: "Package: nikto"
-    yum: name="nikto" state=present
+  - name: "Web Scanning - Fedora-only packages"
+    yum: name={{ item }} state=present
+    with_items: nikto
+    when: ansible_distribution == 'Fedora'
  
   - name: "Package: ssldump"
     yum: name="ssldump" state=present
