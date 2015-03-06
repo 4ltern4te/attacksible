@@ -17,6 +17,8 @@
     - postgresql
     - python
     - python-pip
+    - ruby-devel
+    - rubygem-bundler
     - java-openjdk
     - net-snmp-utils
     - vim-enhanced
@@ -24,6 +26,7 @@
     - libpcap-devel
     - p7zip
     - lldb
+    - zlib-devel
 
 - name: "Fedora-only sys-packages"
   yum: name={{ item }} state=present
