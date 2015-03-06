@@ -6,8 +6,11 @@
     with_items:
       - tor
  
-  - name: "Package: proxychains"
-    yum: name="proxychains" state=present
+  - name: "Anon tools - Fedora-only packages"
+    yum: name={{ item }} state=present
+    with_items:
+      - proxychains
+    when: ansible_distribution == 'Fedora'
  
   - name: "Package: proxytunnel"
     yum: name="proxytunnel" state=present
