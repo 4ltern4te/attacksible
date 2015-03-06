@@ -38,8 +38,8 @@
 - name: "Package: Python Pip"
   yum: name=python-pip state=present
 
-- name: "Package: java-1.8.0-openjdk"
-  yum: name=java-1.8.0-openjdk state=present
+- name: "Package: java-openjdk"
+  yum: name=java-openjdk state=present
 
 - name: "Package: net-snmp-utils"
   yum: name=net-snmp-utils state=present
