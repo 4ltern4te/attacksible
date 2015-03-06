@@ -12,6 +12,7 @@
 
 - name: "Handy tools only available in Fedora"
   yum: name={{ item }} state=present
+  with_items:
     - macchanger
     - ipcalculator
     - ike

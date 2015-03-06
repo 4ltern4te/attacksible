@@ -9,3 +9,7 @@
  
   - name: "Package: sslscan"
     yum: name="sslscan" state=present
+
+  - name: "Git: dvcs-ripper"
+    git: repo=https://github.com/kost/dvcs-ripper.git dest={{ tools_root }}/web-scanning/dvcs-ripper
+    tags: untested

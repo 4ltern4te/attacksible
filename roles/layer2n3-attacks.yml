@@ -2,7 +2,7 @@
   - name: "Layer 2/3 tools - fedora-only packages"
     yum: name={{ item }} state=present
     with_items:
-      - yersina
+      - yersinia
       - sipp
       - sipsak
       - wol

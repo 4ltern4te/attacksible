@@ -15,7 +15,6 @@
   yum: name="fping" state=present                                                                                                                  
 - name: "Package: tcping"
   yum: name="tcping" state=present                                                                                                                  
-
 - name: "Network Discovery - Fedora-only packages"
   yum: name={{ item }} state=present                                                                                                                
   with_items:
@@ -25,12 +24,17 @@
 
 - name: "Package: hping3"
   yum: name="hping3" state=present                                                                                                                 
-
 - name: "File: fierce.pl"
   copy: src=fierce.pl dest={{ tools_root }}/info-discovery/
 
-- name: "Git: recon-ng"
-  git: repo=https://bitbucket.org/LaNMaSteR53/recon-ng.git dest={{ tools_root }}/info-discovery/recon-ng
+- name: "Git: Network Discovery tools"
+  git: repo={{ item }} dest={{ tools_root }}/info-discovery/recon-ng
+  with_items:
+    - https://github.com/robertdavidgraham/masscan
+    - https://bitbucket.org/LaNMaSteR53/recon-ng.git
+
+- name: "Git: fast-recon"
+  git: repo=https://github.com/DanMcInerney/fast-recon dest={{ tools_root }}/info-discovery/fast-recon
 
 - name: "Download enum4linux Samba Enumerator"
   get_url: url=https://labs.portcullis.co.uk/download/enum4linux-0.8.9.tar.gz dest=/tmp/enum4linux.tar.gz
