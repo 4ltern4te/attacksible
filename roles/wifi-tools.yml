@@ -1,13 +1,13 @@
 # Wireless 
 
-- name: "Package: aircrack-ng"
-  yum: name="aircrack-ng" state=present
- 
-- name: "Package: hostapd"
-  yum: name="hostapd" state=present
-
-- name: "Package: kismet"
-  yum: name="kismet" state=present
+- name: "Wifi tools"
+  yum: name={{ item }} state=present
+  with_items:
+    - iw
+    - aircrack-ng
+    - hostapd
+    - kismet
+    - wavemon
  
 - name: "Package: gnuradio"
   yum: name="gnuradio" state=present
@@ -16,6 +16,9 @@
 - name: "wifite"
   git: repo=https://github.com/derv82/wifite dest={{ tools_root }}/wifi-tools/wifite
   tags: untested
+
+- name: "wifijammer"
+  git: repo=https://github.com/DanMcInerney/wifijammer.git dest={{ tools_root }}/wifi-tools/wifijammer
 
 - name: "reaver-wps"
   subversion: repo=http://reaver-wps.googlecode.com/svn/trunk/ dest={{ tools_root }}/wifi-tools/reaver-wps
