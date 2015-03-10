@@ -4,10 +4,15 @@
   yum: name={{ item }} state=present
   with_items:
     - iw
-    - aircrack-ng
     - hostapd
-    - kismet
     - wavemon
+
+- name: "Wifi tools - Fedora only"
+  yum: name={{ item }} state=present
+  with_items:
+    - aircrack-ng
+    - kismet
+  when: ansible_distribution == 'Fedora'
  
 - name: "Package: gnuradio"
   yum: name="gnuradio" state=present

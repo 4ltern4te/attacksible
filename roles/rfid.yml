@@ -1,9 +1,10 @@
   # RFID
-  - name: "Package: libnfc"
-    yum: name="libnfc" state=present
- 
-  - name: "Package: libnfc-examples"
-    yum: name=libnfc-examples state=present
+  - name: "Package: libnfc and examples"
+    yum: name={{ item }} state=present
+    with_items:
+      - libnfc
+      - libnfc-examples
+    when: ansible_distribution == 'Fedora'
 
   - name: "nfc-tools"
     subversion: repo=http://nfc-tools.googlecode.com/svn/trunk/ dest={{ tools_root }}/rfid/nfc-tools
