@@ -8,20 +8,17 @@
   - name: "Package: ddrescue"
     yum: name="ddrescue" state=present
  
-  - name: "Package: extundelete"
-    yum: name="extundelete" state=present
- 
-  - name: "Package: foremost"
-    yum: name="foremost" state=present
- 
-  - name: "Package: safecopy"
-    yum: name="safecopy" state=present
+  - name: "HDD forensics - Fedora only"
+    yum: name={{ item }} state=present
+    when: ansible_distribution == 'fedora'
+    with_items:
+      - extundelete
+      - foremost
+      - safecopy
+      - recoverjpeg
  
   - name: "Package: scalpel"
     yum: name="scalpel" state=present
  
-  - name: "Package: recoverjpeg"
-    yum: name="recoverjpeg" state=present
-
   - name: "Package: testdisk"
     yum: name=testdisk state=present
