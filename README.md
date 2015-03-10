@@ -33,3 +33,5 @@ Software we're yet to confirm as stable in the system has been tagged with 'unte
 These can be excluded by issuing `--skip-tags 'untested'`
 
     ansible-playbook play.yml -i attacksible --skip-tags 'untested' --connection=local -K
+
+Tools will be located in /opt/attacksible, or otherwise installed globally as system packages
