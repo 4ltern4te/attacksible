@@ -14,6 +14,11 @@ Install
 
     yum install ansible
 
+or
+
+    git clone -- recursive https://github.com/ansible/ansible.git
+    source ansible/hacking/env-setup
+
 Usage
 -----
 
