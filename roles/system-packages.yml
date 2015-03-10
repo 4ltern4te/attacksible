@@ -17,6 +17,7 @@
     - postgresql
     - python
     - python-pip
+    - python-devel
     - ruby-devel
     - rubygem-bundler
     - java-openjdk
