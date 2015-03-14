@@ -2,7 +2,8 @@
 Ansible provisioned security platform for RPM based systems.
 
 Tested on:
-* Fedora 21
+* Fedora 19,20,21
+* CentOS 7 (however a bunch of tools will be missing)
 
 Near future improvements:
 * APT based system support
