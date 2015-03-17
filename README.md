@@ -7,7 +7,6 @@ Tested on:
 
 Near future improvements:
 * APT based system support
-* More funky tools
 * Install of the software from the git repos pulled in
 
 Install
@@ -23,6 +22,8 @@ or
 Usage
 -----
 
+Tools will be located in /opt/attacksible, or otherwise installed globally as system packages
+
 ### For the full desktop install
     ansible-playbook play.yml -i attacksible --connection=local -K
 
@@ -35,4 +36,3 @@ These can be excluded by issuing `--skip-tags 'untested'`
 
     ansible-playbook play.yml -i attacksible --skip-tags 'untested' --connection=local -K
 
-Tools will be located in /opt/attacksible, or otherwise installed globally as system packages
