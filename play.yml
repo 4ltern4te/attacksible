@@ -3,12 +3,6 @@
   sudo: yes
   tasks:
 
-  # Install: roles/ansible-playbook play.yml --list-hosts
-  #  ansible-playbook play.yml 
-
-  # Wrote this for Fedora 19/20
-  # Still need quite a few sections
-
   - include: roles/common.yml
   
   - include: roles/system-packages.yml
