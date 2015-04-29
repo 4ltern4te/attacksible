@@ -50,8 +50,5 @@
 - name: "Extract MetaGoofil"
   command: tar -xzf /tmp/metagoofil.tar.gz -C {{ tools_root }}/info-discovery/metagoofil
 
-- name: "Git: wfuzz"
-  git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/info-discovery/wfuzz
-
 - name: "miranda-upnp"
   subversion: repo=http://miranda-upnp.googlecode.com/svn/trunk/ dest={{ tools_root }}/network-discovery/miranda-upnp

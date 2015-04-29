@@ -1,15 +1,18 @@
-  # Web Scanning
-  - name: "Web Scanning - Fedora-only packages"
-    yum: name={{ item }} state=present
-    with_items: nikto
-    when: ansible_distribution == 'Fedora'
+# Web Scanning
+- name: "Web Scanning - Fedora-only packages"
+  yum: name={{ item }} state=present
+  with_items: nikto
+  when: ansible_distribution == 'Fedora'
  
-  - name: "Package: ssldump"
-    yum: name="ssldump" state=present
- 
-  - name: "Package: sslscan"
-    yum: name="sslscan" state=present
+- name: "Package: ssldump"
+  yum: name="ssldump" state=present
 
-  - name: "Git: dvcs-ripper"
-    git: repo=https://github.com/kost/dvcs-ripper.git dest={{ tools_root }}/web-scanning/dvcs-ripper
-    tags: untested
+- name: "Package: sslscan"
+  yum: name="sslscan" state=present
+
+- name: "Git: wfuzz"
+  git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/web-scanning/wfuzz
+
+- name: "Git: dvcs-ripper"
+  git: repo=https://github.com/kost/dvcs-ripper.git dest={{ tools_root }}/web-scanning/dvcs-ripper
+  tags: untested
