@@ -16,3 +16,11 @@
 - name: "Git: dvcs-ripper"
   git: repo=https://github.com/kost/dvcs-ripper.git dest={{ tools_root }}/web-scanning/dvcs-ripper
   tags: untested
+
+- name: "git clone c5scan"
+  git: repo=https://github.com/auraltension/c5scan.git dest={{ tools_root }}/web-scanning/c5scan
+
+- name: "git clone wpscan"
+  git: repo=https://github.com/wpscanteam/wpscan.git dest={{ tools_root }}/web-scanning/wpscan
+- name: "bundle install for wpscan"
+  shell: bundle install chdir={{ tools_root }}/web-scanning/wpscan
