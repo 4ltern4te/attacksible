@@ -1,24 +1,19 @@
-  # Hard Drive Fornsics
-  - name: "Package: dc3dd"
-    yum: name="dc3dd" state=present
- 
-  - name: "Package: dcfldd"
-    yum: name="dcfldd" state=present
- 
-  - name: "Package: ddrescue"
-    yum: name="ddrescue" state=present
- 
-  - name: "HDD forensics - Fedora only"
-    yum: name={{ item }} state=present
-    when: ansible_distribution == 'fedora'
-    with_items:
-      - extundelete
-      - foremost
-      - safecopy
-      - recoverjpeg
- 
-  - name: "Package: scalpel"
-    yum: name="scalpel" state=present
- 
-  - name: "Package: testdisk"
-    yum: name=testdisk state=present
+# Hard Drive Fornsics
+- name: "HDD Forensics packages"
+  yum: name={{ item }} state=present
+  with_items:
+    - dc3dd
+    - dcfldd
+    - ddrescue
+    - scalpel
+    - testdisk
+  when: ansible_os_family == "RedHat"
+
+- name: "HDD forensics - Fedora only"
+  yum: name={{ item }} state=present
+  with_items:
+    - extundelete
+    - foremost
+    - safecopy
+    - recoverjpeg
+  when: ansible_distribution == 'fedora'

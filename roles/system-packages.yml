@@ -32,6 +32,38 @@
   when:
     - ansible_os_family == "RedHat"
 
+- name: "System packages"
+  apt: name={{ item }} state=present
+  with_items:
+#    - '"@Development tools"'
+    - clang
+    - curl
+    - patch
+#    - pth
+    - clamav
+    - ferm
+    - htop
+    - lighttpd
+    - postgresql
+    - postgresql-server-dev-all
+    - postgresql
+    - python
+    - python-pip
+    - python-dev
+    - ruby-dev
+    - bundler
+    - openjdk-8-jdk
+    - snmp
+    - vim
+    - libpcap-dev
+    - p7zip
+    - lldb
+    - zlib1g-dev
+    - subversion
+    - libsqlite3-dev
+  when:
+    - ansible_os_family == "Debian"
+
 - name: "Fedora-only sys-packages"
   yum: name={{ item }} state=present
   with_items:
@@ -41,15 +73,15 @@
 
 - name: "GUI environment sys-packages"
   yum: name=terminator state=present
-  tags: gui
   when:
     - ansible_os_family == "RedHat"
+  tags: gui
 
 - name: "Untested sys-packages"
   yum: name=http://keepnote.org/download/keepnote-0.7.8-1.noarch.rpm state=present
-  tags: untested
   when:
     - ansible_os_family == "RedHat"
+  tags: untested
 
 - name: "Pip packages"
   shell: pip install {{ item }} 

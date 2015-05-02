@@ -5,20 +5,18 @@
     yum: pkg={{ item }} state=latest
     with_items:
       - tor
+      - stunnel
+      - iodine
+    when: ansible_os_family == "RedHat"
+
  
-  - name: "Anon tools - Fedora-only packages"
+  - name: "Anon and proxy tools - Fedora-only packages"
     yum: name={{ item }} state=present
     with_items:
       - proxychains
       - proxytunnel
     when: ansible_distribution == 'Fedora'
  
-  - name: "Package: stunnel"
-    yum: name="stunnel" state=present
- 
-  - name: "Package: iodine"
-    yum: name="iodine" state=present
-
   - name: "Onionshare"
     git: repo=https://github.com/micahflee/onionshare dest={{ tools_root }}/anon-tools/onionshare
     tags: untested

@@ -1,16 +1,15 @@
-  # Network Sniffing
-  - name: "Network Sniffing - fedora-only packages"
-    yum: name={{ item }} state=present
-    with_items:
-      - tcpflow
-      - ettercap
-    when: ansible_distribution == 'Fedora'
+# Network Sniffing
+- name: "Network Sniffing Packages"
+  yum: name={{ item }} state=present
+  with_items:
+    - wireshark
+    - tcpreplay
+    - dsniff
+  when: ansible_os_family == "RedHat"
 
-  - name: "Package: tcpreplay"
-    yum: name="tcpreplay" state=present
-
-  - name: "Package: wireshark"
-    yum: name="wireshark" state=present
- 
-  - name: "Package: dsniff"
-    yum: name="dsniff" state=present
+- name: "Network Sniffing - fedora-only packages"
+  yum: name={{ item }} state=present
+  with_items:
+    - tcpflow
+    - ettercap
+  when: ansible_distribution == 'Fedora'

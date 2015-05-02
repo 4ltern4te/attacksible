@@ -4,26 +4,24 @@
 - name: "Create info-discovery directory"
   file: path={{ tools_root }}/info-discovery owner=root state=directory mode=0755
 
-- name: "Package: nmap"
-  yum: pkg=nmap state=latest
+- name: "network Discovery & Scanning Packages"
+  yum: pkg={{ item }} state=latest
+  with_items:
+    - hping3
+    - nmao
+    - onesixtyone
+    - snmpcheck
+    - fping
+    - tcping
+  when: ansible_os_family == "RedHat"
 
-- name: "Package: onesixtyone"    
-  yum: name="onesixtyone" state=present                                                                                                            
-- name: "Package: snmpcheck"
-  yum: name="snmpcheck" state=present                                                                                                              
-- name: "Package: fping"
-  yum: name="fping" state=present                                                                                                                  
-- name: "Package: tcping"
-  yum: name="tcping" state=present                                                                                                                  
 - name: "Network Discovery - Fedora-only packages"
-  yum: name={{ item }} state=present                                                                                                                
+  yum: name={{ item }} state=present
   with_items:
     - nbtscan
     - intrace
   when: ansible_distribution == 'Fedora'
 
-- name: "Package: hping3"
-  yum: name="hping3" state=present                                                                                                                 
 - name: "File: fierce.pl"
   copy: src=fierce.pl dest={{ tools_root }}/info-discovery/
 

@@ -10,6 +10,7 @@
     - ngrep
     - md5deep
     - perl-Image-ExifTool
+  when: ansible_os_family == "RedHat"
 
 - name: "Handy tools only available in Fedora"
   yum: name={{ item }} state=present
@@ -25,4 +26,5 @@
   with_items:
     - recordmydesktop
     - keepassx
+  when: ansible_os_family == "RedHat"
   tags: gui

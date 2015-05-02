@@ -6,6 +6,7 @@
     - iw
     - hostapd
     - wavemon
+  when: ansible_os_family == "RedHat"
 
 - name: "Wifi tools - Fedora only"
   yum: name={{ item }} state=present
@@ -16,6 +17,7 @@
  
 - name: "Package: gnuradio"
   yum: name="gnuradio" state=present
+  when: ansible_os_family == "RedHat"
   tags: gui
 
 - name: "wifite"

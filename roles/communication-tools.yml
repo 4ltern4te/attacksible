@@ -2,3 +2,5 @@
 
 - name: "Package: weechat"
   yum: name=weechat state=present
+  when: ansible_os_family == "RedHat"
+
