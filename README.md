@@ -4,15 +4,15 @@ Ansible provisioned security platform for RPM based systems.
 Tested on:
 * Fedora 19,20,21
 * CentOS 7 (however a bunch of tools will be missing)
+* Debian Sid
 
 Near future improvements:
-* APT based system support
 * Install of the software from the git repos pulled in
 
 Install
 -----
 
-    yum install ansible
+    sudo yum install ansible || sudo apt-get install ansible
 
 or
 
