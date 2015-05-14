@@ -6,7 +6,7 @@ Ansible provisioned security platform.
 Tested on:
 * Fedora 19,20,21
 * CentOS 7 (however a bunch of tools will be missing)
-* Debian Sid
+* Debian of various releases
 
 Near future improvements:
 * Install of the software from the git repos pulled in
