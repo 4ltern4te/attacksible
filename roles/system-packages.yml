@@ -1,6 +1,8 @@
 # System Packages / Dev Packages
 # Firewall rules / Antivirus / Logging / OS House clean / System Debug Tools
 
+## REDHAT
+
 - name: "System packages"
   yum: name={{ item }} state=present
   with_items:
@@ -29,40 +31,9 @@
     - p7zip
     - lldb
     - zlib-devel
+    - http://keepnote.org/download/keepnote-0.7.8-1.noarch.rpm
   when:
     - ansible_os_family == "RedHat"
-
-- name: "System packages"
-  apt: name={{ item }} state=present
-  with_items:
-#    - '"@Development tools"'
-    - clang
-    - curl
-    - patch
-#    - pth
-    - clamav
-    - ferm
-    - htop
-    - lighttpd
-    - postgresql
-    - postgresql-server-dev-all
-    - postgresql
-    - python
-    - python-pip
-    - python-dev
-    - ruby-dev
-    - bundler
-    - openjdk-8-jdk
-    - snmp
-    - vim
-    - libpcap-dev
-    - p7zip
-    - lldb
-    - zlib1g-dev
-    - subversion
-    - libsqlite3-dev
-  when:
-    - ansible_os_family == "Debian"
 
 - name: "Fedora-only sys-packages"
   yum: name={{ item }} state=present
@@ -77,11 +48,54 @@
     - ansible_os_family == "RedHat"
   tags: gui
 
-- name: "Untested sys-packages"
-  yum: name=http://keepnote.org/download/keepnote-0.7.8-1.noarch.rpm state=present
+
+## DEBIAN
+
+- name: "System packages"
+  apt: name={{ item }} state=present
+  with_items:
+#    - '"@Development tools"'
+    - clang
+    - curl
+    - patch
+#    - pth
+    - clamav
+    - ferm
+    - htop
+    - keepnote
+    - lighttpd
+    - postgresql
+    - postgresql-server-dev-all
+    - postgresql
+    - python
+    - python-pip
+    - python-dev
+    - ruby-dev
+    - bundler
+    - openjdk-8-jdk
+    - snmp
+    - vim
+    - libpcap-dev
+    - p7zip
+    - python-libpcap
+    - tsocks
+    - lldb
+    - zlib1g-dev
+    - subversion
+    - libsqlite3-dev
   when:
-    - ansible_os_family == "RedHat"
-  tags: untested
+    - ansible_os_family == "Debian"
+
+- name: "GUI environment sys-packages"
+  apt: name=terminator state=present
+  when:
+    - ansible_os_family == "Debian"
+  tags: gui
+
+## All
+
+- name: Make sure pip upgraded
+  command: easy_install -U pip
 
 - name: "Pip packages"
   shell: pip install {{ item }} 
