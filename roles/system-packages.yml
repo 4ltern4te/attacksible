@@ -15,6 +15,7 @@
     - ferm
     - htop
     - lighttpd
+    - mysql
     - postgresql-server
     - postgresql-devel
     - postgresql
@@ -64,6 +65,7 @@
     - htop
     - keepnote
     - lighttpd
+    - mysql-client
     - postgresql
     - postgresql-server-dev-all
     - postgresql
