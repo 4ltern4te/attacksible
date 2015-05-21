@@ -1,5 +1,6 @@
 # Tools
-#
+
+## Redhat
 - name: "Handy Tools"
   yum: name={{ item }} state=present
   with_items:
@@ -27,4 +28,29 @@
     - recordmydesktop
     - keepassx
   when: ansible_os_family == "RedHat"
+  tags: gui
+
+## Debian
+- name: "Handy Tools"
+  apt: name={{ item }} state=present
+  with_items:
+    - cadaver
+    - tmux
+    - screen
+    - socat
+    - ngrep
+    - md5deep
+    - libimage-exiftool-perl
+    - macchanger
+    - ipcalc
+    - ike
+    - tcplay
+  when: ansible_os_family == "Debian"
+
+- name: "Handy tools for Desktops"
+  apt: name={{ item }} state=present
+  with_items:
+    - recordmydesktop
+    - keepassx
+  when: ansible_os_family == "Debian"
   tags: gui

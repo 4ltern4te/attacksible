@@ -1,4 +1,6 @@
 # Hard Drive Fornsics
+
+## Redhat
 - name: "HDD Forensics packages"
   yum: name={{ item }} state=present
   with_items:
@@ -17,3 +19,18 @@
     - safecopy
     - recoverjpeg
   when: ansible_distribution == 'fedora'
+
+## Debian
+- name: "HDD Forensics packages"
+  apt: name={{ item }} state=present
+  with_items:
+    - dc3dd
+    - dcfldd
+    - gddrescue
+    - scalpel
+    - testdisk
+    - extundelete
+    - foremost
+    - safecopy
+    - recoverjpeg
+  when: ansible_os_family == "Debian"

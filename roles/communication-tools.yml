@@ -4,3 +4,7 @@
   yum: name=weechat state=present
   when: ansible_os_family == "RedHat"
 
+- name: "Package: weechat"
+  apt: name=weechat state=present
+  when: ansible_os_family == "Debian"
+

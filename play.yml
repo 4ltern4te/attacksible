@@ -27,6 +27,8 @@
  
   - include: roles/anon-tools.yml
 
+  - include: roles/mobile.yml
+
   - include: roles/network-sniffing.yml
   
   - include: roles/layer2n3-attacks.yml

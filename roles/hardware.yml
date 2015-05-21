@@ -1,9 +1,20 @@
 # Hardware Hacking
-- name: "Package: arduino"
-  yum: name="arduino" state=present
-  when: ansible_distribution == 'Fedora'
+
+## Redhat
 
 - name: "Package: minicom"
   yum: name="minicom" state=present
   when: ansible_os_family == "RedHat"
 
+- name: "Package: arduino"
+  yum: name="arduino" state=present
+  when: ansible_distribution == 'Fedora'
+
+## Debian
+
+- name: "Package: minicom"
+  apt: name={{ item }} state=present
+  with_items:
+    - minicom
+    - arduino
+  when: ansible_os_family == "Debian"

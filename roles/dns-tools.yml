@@ -3,6 +3,8 @@
 - name: "Create dnstools directory"
   file: path={{ tools_root }}/dnstools owner=root state=directory mode=0755
 
+## Redhat
+
 - name: "DNS tools packages"
   yum: name={{ item }} state=present
   with_items:
@@ -17,6 +19,16 @@
     - dnstracer
     - dnsenum
   when: ansible_distribution == 'Fedora'
+
+## Debian
+
+- name: "DNS tools packages"
+  apt: name={{ item }} state=present
+  with_items:
+    - dnstracer
+  when: ansible_os_family == "Debian"
+
+## All
  
 - name: "Git: dnsrecon"
   git: repo=https://github.com/darkoperator/dnsrecon.git dest={{ tools_root }}/dnstools/dnsrecon/

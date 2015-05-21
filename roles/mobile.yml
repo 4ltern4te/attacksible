@@ -1,0 +1,9 @@
+# Hard Drive Fornsics
+
+## Debian
+- name: "Mobile packages"
+  apt: name={{ item }} state=present
+  with_items:
+    - android-tools-adb
+    - android-tools-fastboot
+  when: ansible_os_family == "Debian"

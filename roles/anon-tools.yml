@@ -1,22 +1,36 @@
-  # Annonimity
-  # Remove info leakage via DHCP
-  # Intense firewall rules / honeypot setup to avoid OS profiling
-  - name: "Package: tor"
-    yum: pkg={{ item }} state=latest
-    with_items:
-      - tor
-      - stunnel
-      - iodine
-    when: ansible_os_family == "RedHat"
+# Annonimity
+# Remove info leakage via DHCP
+# Intense firewall rules / honeypot setup to avoid OS profiling
 
- 
-  - name: "Anon and proxy tools - Fedora-only packages"
-    yum: name={{ item }} state=present
-    with_items:
-      - proxychains
-      - proxytunnel
-    when: ansible_distribution == 'Fedora'
- 
-  - name: "Onionshare"
-    git: repo=https://github.com/micahflee/onionshare dest={{ tools_root }}/anon-tools/onionshare
-    tags: untested
+## Redhat
+- name: "Package: tor"
+  yum: pkg={{ item }} state=latest
+  with_items:
+    - tor
+    - stunnel
+    - iodine
+  when: ansible_os_family == "RedHat"
+
+
+- name: "Anon and proxy tools - Fedora-only packages"
+  yum: name={{ item }} state=present
+  with_items:
+    - proxychains
+    - proxytunnel
+  when: ansible_distribution == 'Fedora'
+
+## Debian
+- name: "Package: tor"
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - tor
+    - stunnel
+    - iodine
+    - proxychains
+    - proxytunnel
+  when: ansible_os_family == "Debian"
+
+## All
+- name: "Onionshare"
+  git: repo=https://github.com/micahflee/onionshare dest={{ tools_root }}/anon-tools/onionshare
+  tags: untested

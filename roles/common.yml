@@ -6,3 +6,7 @@
 
 - name: "Copy: mega.co.nz downloader"
   copy: src=mega-dl.sh dest=/tmp/ owner=root group=root mode=0750
+
+- name: update apt sources
+  command: apt-get update
+  when: ansible_os_family == "Debian"
