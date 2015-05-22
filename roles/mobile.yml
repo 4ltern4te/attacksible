@@ -1,5 +1,12 @@
 # Hard Drive Fornsics
 
+## Redhat
+- name: "Mobile packages"
+  yum: name={{ item }} state=present
+  with_items:
+    - android-tools
+  when: ansible_os_family == "Redhat"
+
 ## Debian
 - name: "Mobile packages"
   apt: name={{ item }} state=present
