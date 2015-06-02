@@ -21,11 +21,6 @@ or
     git clone --recursive https://github.com/ansible/ansible.git
     source ansible/hacking/env-setup
 
-Usage
------
-
-Tools will be located in /opt/attacksible, or otherwise installed globally as system packages
-
 ### For the full desktop install
     ansible-playbook play.yml -i attacksible --connection=local -K
 
@@ -37,4 +32,9 @@ Software we're yet to confirm as stable in the system has been tagged with 'unte
 These can be excluded by issuing `--skip-tags 'untested'`
 
     ansible-playbook play.yml -i attacksible --skip-tags 'untested' --connection=local -K
+
+Usage
+-----
+
+Tools will be located in /opt/attacksible, or otherwise installed globally as system packages
 
