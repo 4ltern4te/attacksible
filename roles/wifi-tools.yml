@@ -1,5 +1,6 @@
 # Wireless 
 
+## Redhat
 - name: "Wifi tools"
   yum: name={{ item }} state=present
   with_items:
@@ -14,12 +15,29 @@
     - aircrack-ng
     - kismet
   when: ansible_distribution == 'Fedora'
- 
+
 - name: "Package: gnuradio"
   yum: name="gnuradio" state=present
   when: ansible_os_family == "RedHat"
   tags: gui
 
+## Debain
+- name: "Wifi tools"
+  apt: name={{ item }} state=present
+  with_items:
+    - iw
+    - hostapd
+    - wavemon
+    - aircrack-ng
+    - kismet
+  when: ansible_os_family == "Debian"
+
+- name: "Package: gnuradio"
+  apt: name="gnuradio" state=present
+  when: ansible_os_family == "Debian"
+  tags: gui
+
+## All
 - name: "wifite"
   git: repo=https://github.com/derv82/wifite dest={{ tools_root }}/wifi-tools/wifite
   tags: untested

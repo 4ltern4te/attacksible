@@ -1,7 +1,15 @@
-  # OS profiling 
-  - name: "OS profiling packages - Fedora only"
-    yum: name={{ item }} state=present
-    with_items:
-      - p0f
-    when: ansible_distribution == 'Fedora'
+# OS profiling 
 
+## Redhat
+- name: "OS profiling packages - Fedora only"
+  yum: name={{ item }} state=present
+  with_items:
+    - p0f
+  when: ansible_distribution == 'Fedora'
+
+## Debian
+- name: "OS profiling packages"
+  apt: name={{ item }} state=present
+  with_items:
+    - p0f
+  when: ansible_distribution == 'Debian'

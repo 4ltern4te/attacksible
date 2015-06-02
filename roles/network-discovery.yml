@@ -4,11 +4,12 @@
 - name: "Create info-discovery directory"
   file: path={{ tools_root }}/info-discovery owner=root state=directory mode=0755
 
+## Redhat
 - name: "network Discovery & Scanning Packages"
   yum: pkg={{ item }} state=latest
   with_items:
     - hping3
-    - nmao
+    - nmap
     - onesixtyone
     - snmpcheck
     - fping
@@ -21,6 +22,19 @@
     - nbtscan
     - intrace
   when: ansible_distribution == 'Fedora'
+
+## Debian
+- name: "network Discovery & Scanning Packages"
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - hping3
+    - nmap
+    - onesixtyone
+    - fping
+    - nbtscan
+  when: ansible_os_family == "Debian"
+
+## All
 
 - name: "File: fierce.pl"
   copy: src=fierce.pl dest={{ tools_root }}/info-discovery/

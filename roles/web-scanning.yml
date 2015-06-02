@@ -1,4 +1,6 @@
 # Web Scanning
+
+## Redhat
 - name: "Web Scanning - Fedora-only packages"
   yum: name={{ item }} state=present
   with_items: 
@@ -12,6 +14,16 @@
     - sslscan
   when: ansible_os_family == "RedHat"
 
+## Debain
+- name: "Web Scanning - Fedora-only packages"
+  apt: name={{ item }} state=present
+  with_items: 
+    - nikto
+    - ssldump
+    - sslscan
+  when: ansible_distribution == 'Debian'
+
+## All
 - name: "Git: wfuzz"
   git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/web-scanning/wfuzz
 

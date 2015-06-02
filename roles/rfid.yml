@@ -1,11 +1,22 @@
-  # RFID
-  - name: "Package: libnfc and examples"
-    yum: name={{ item }} state=present
-    with_items:
-      - libnfc
-      - libnfc-examples
-    when: ansible_distribution == 'Fedora'
+# RFID
 
-  - name: "nfc-tools"
-    subversion: repo=http://nfc-tools.googlecode.com/svn/trunk/ dest={{ tools_root }}/rfid/nfc-tools
-    tags: untested
+## Redhat
+- name: "Package: libnfc and examples"
+  yum: name={{ item }} state=present
+  with_items:
+    - libnfc
+    - libnfc-examples
+  when: ansible_distribution == 'Fedora'
+
+## Redhat
+- name: "Package: libnfc and examples"
+  apt: name={{ item }} state=present
+  with_items:
+    - libnfc-dev
+    - libnfc-examples
+  when: ansible_distribution == 'Debian'
+
+## All
+- name: "nfc-tools"
+  subversion: repo=http://nfc-tools.googlecode.com/svn/trunk/ dest={{ tools_root }}/rfid/nfc-tools
+  tags: untested

@@ -1,4 +1,6 @@
 # Layer 2/3 and Router Proto Attacks
+
+## Redhat
 - name: "Layer 2/3 Packages"
   yum: name="sslsplit" state=present
   when: ansible_os_family == "RedHat"
@@ -12,3 +14,13 @@
     - wol
     - sslstrip
   when: ansible_distribution == 'Fedora'
+
+## Debian
+- name: "Layer 2/3 Packages"
+  apt: name={{ item }} state=present
+  with_items:
+    - yersinia
+    - sipsak
+    - wakeonlan
+    - sslstrip
+  when: ansible_distribution == 'Debian'

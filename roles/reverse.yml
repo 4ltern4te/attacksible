@@ -2,6 +2,7 @@
 - name: "Create info-discovery directory"
   file: path={{ tools_root }}/reversing owner=root state=directory mode=0755
 
+## Redhat
 - name: "Reversing, Decompilers"
   yum: name={{ item }} state=present
   with_items:
@@ -10,5 +11,15 @@
     - flasm
   when: ansible_distribution == 'Fedora'
 
+## Debian
+- name: "Reversing, Decompilers"
+  apt: name={{ item }} state=present
+  with_items:
+    - edb
+    - binwalk
+    - flasm
+  when: ansible_distribution == 'Debian'
+
+# All
 - name: "Git: toby"
   git: repo=https://github.com/byt3bl33d3r/toby.git dest={{ tools_root}}/reversing/toby

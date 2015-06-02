@@ -1,4 +1,6 @@
 # Network Sniffing
+
+## Redhat
 - name: "Network Sniffing Packages"
   yum: name={{ item }} state=present
   with_items:
@@ -13,3 +15,22 @@
     - tcpflow
     - ettercap
   when: ansible_distribution == 'Fedora'
+
+## Debian
+- name: "Network Sniffing Packages"
+  apt: name={{ item }} state=present
+  with_items:
+    - wireshark
+    - tcpreplay
+    - dsniff
+    - tcpflow
+    - ettercap-text-only
+  when: ansible_os_family == "Debian"
+
+## Debian
+- name: "Network Sniffing Packages"
+  apt: name={{ item }} state=present
+  with_items:
+    - ettercap-graphical
+  when: ansible_os_family == "Debian"
+  tags: gui
