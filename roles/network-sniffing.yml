@@ -1,30 +1,35 @@
 # Network Sniffing
 
+- name: "Create network-sniffing directory"
+  file: path={{ tools_root }}/network-sniffing owner=root state=directory mode=0755
+
 ## Redhat
 - name: "Network Sniffing Packages"
   yum: name={{ item }} state=present
   with_items:
-    - wireshark
-    - tcpreplay
     - dsniff
+    - mitmproxy
+    - tcpreplay
+    - wireshark
   when: ansible_os_family == "RedHat"
 
 - name: "Network Sniffing - fedora-only packages"
   yum: name={{ item }} state=present
   with_items:
-    - tcpflow
     - ettercap
+    - tcpflow
   when: ansible_distribution == 'Fedora'
 
 ## Debian
 - name: "Network Sniffing Packages"
   apt: name={{ item }} state=present
   with_items:
-    - wireshark
-    - tcpreplay
     - dsniff
-    - tcpflow
     - ettercap-text-only
+    - mitmproxy
+    - tcpflow
+    - tcpreplay
+    - wireshark
   when: ansible_os_family == "Debian"
 
 ## Debian
@@ -34,3 +39,10 @@
     - ettercap-graphical
   when: ansible_os_family == "Debian"
   tags: gui
+
+## All
+- name: "Git: MITMf"
+  git: repo=https://github.com/byt3bl33d3r/MITMf.git dest={{ tools_root }}/network-sniffing/MITMf
+
+- name: "Git: net-creds"
+  git: repo=https://github.com/DanMcInerney/net-creds.git dest={{ tools_root }}/network-sniffing/net-creds
