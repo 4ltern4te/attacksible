@@ -15,6 +15,7 @@
     - ferm
     - htop
     - lighttpd
+    - libcapstone-devel
     - mysql
     - postgresql-server
     - postgresql-devel
@@ -64,6 +65,7 @@
     - ferm
     - htop
     - keepnote
+    - libcapstone-dev
     - lighttpd
     - mysql-client
     - postgresql
