@@ -37,7 +37,7 @@
 ## All
 
 - name: "File: fierce.pl"
-  copy: src=fierce.pl dest={{ tools_root }}/info-discovery/
+  copy: src=files/fierce.pl dest={{ tools_root }}/info-discovery/
 
 - name: "Git: recon-ng"
   git: repo=https://bitbucket.org/LaNMaSteR53/recon-ng.git dest={{ tools_root }}/info-discovery/recon-ng

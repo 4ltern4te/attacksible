@@ -5,7 +5,7 @@
   file: path={{ tools_root }} state=directory owner=root group=root mode=0755
 
 - name: "Copy: mega.co.nz downloader"
-  copy: src=mega-dl.sh dest=/tmp/ owner=root group=root mode=0750
+  copy: src=files/mega-dl.sh dest=/tmp/ owner=root group=root mode=0750
 
 - name: update apt sources
   command: apt-get update
