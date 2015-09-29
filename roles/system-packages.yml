@@ -15,7 +15,6 @@
     - ferm
     - htop
     - lighttpd
-    - libcapstone-devel
     - mysql
     - postgresql-server
     - postgresql-devel
