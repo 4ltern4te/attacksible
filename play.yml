@@ -1,52 +1,31 @@
 --- 
+
 - hosts: attacksible
   sudo: yes
-  tasks:
-
-  - include: roles/common.yml
-  
-  - include: roles/system-packages.yml
-
-  - include: roles/communication-tools.yml
-
-  - include: roles/handy-tools.yml
-
-  - include: roles/network-discovery.yml
-
-  - include: roles/web-scanning.yml 
-  
-  - include: roles/dns-tools.yml
-  
-  - include: roles/smtp-tools.yml
-
-  - include: roles/os-tools.yml
-
-  - include: roles/exploit-tools.yml
-
-  - include: roles/exploit-db.yml 
- 
-  - include: roles/anon-tools.yml
-
-  - include: roles/mobile.yml
-
-  - include: roles/network-sniffing.yml
-  
-  - include: roles/layer2n3-attacks.yml
-
-  - include: roles/password-cracking.yml
-
-  - include: roles/wifi-tools.yml 
-
-  - include: roles/rfid.yml
-
-  - include: roles/hardware.yml 
-
-  - include: roles/reverse.yml
-
-  - include: roles/hdd-forensics.yml
-
-  - include: roles/wordlists.yml
-
-  - include: roles/exploit-dev.yml
-    vars: 
-        local_user: "{{ lookup('env','USER') }}"
+  vars: 
+    tools_root: /opt/attacksible
+    local_user: "{{ lookup('env','USER') }}"
+  roles:
+    - common
+    - system-packages
+    - communication-tools
+    - handy-tools
+      #    - network-discovery
+    - web-scanning
+    - dns-tools
+    - smtp-tools
+    - os-tools
+    - exploit-dev
+    - exploit-tools
+    - anon-tools
+    - mobile
+    - network-sniffing
+    - layer2n3-attacks
+    - password-cracking
+    - wifi-tools
+    - rfid
+    - hardware
+    - reverse
+    - hdd-forensics
+    - wordlists
+    - exploit-dev

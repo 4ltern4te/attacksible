@@ -1,11 +1,11 @@
 # DNS
 
-- name: "Create dnstools directory"
+- name: "DNS tools - Create dnstools directory"
   file: path={{ tools_root }}/dnstools owner=root state=directory mode=0755
 
 ## Redhat
 
-- name: "DNS tools packages"
+- name: "DNS tools  - Packages"
   yum: name={{ item }} state=present
   with_items:
     - lbd
@@ -13,7 +13,7 @@
   when: ansible_os_family == "RedHat"
 
 
-- name: "DNS tools - Fedora-only packages"
+- name: "DNS tools - Packages (Fedora)"
   yum: name={{ item }} state=present
   with_items:
     - dnstracer
@@ -22,7 +22,7 @@
 
 ## Debian
 
-- name: "DNS tools packages"
+- name: "DNS tools - Packages"
   apt: name={{ item }} state=present
   with_items:
     - dnstracer

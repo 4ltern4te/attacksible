@@ -6,7 +6,7 @@
 - name: "System packages"
   yum: name={{ item }} state=present
   with_items:
-    - '"@Development tools"'
+    - '@Development tools'
     - clang
     - dhcp
     - patch
@@ -104,3 +104,11 @@
   shell: pip install {{ item }} 
   with_items:
     - pyinstaller
+    - psycopg2
+
+- name: Inititialise Postgres
+  command: postgresql-setup initdb
+  ignore_errors: yes
+
+- name: Start postgresql
+  service: name=postgresql enabled=no state=started
