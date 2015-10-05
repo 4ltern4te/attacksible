@@ -10,7 +10,7 @@
     - system-packages
     - communication-tools
     - handy-tools
-      #    - network-discovery
+#    - network-discovery
     - web-scanning
     - dns-tools
     - smtp-tools
