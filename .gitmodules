@@ -1,0 +1,3 @@
+[submodule "roles/rvm1"]
+	path = roles/rvm1
+	url = https://github.com/rvm/rvm1-ansible
