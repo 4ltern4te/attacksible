@@ -4,7 +4,7 @@ Attacksible
 Ansible provisioned security platform.
 
 Tested on:
-* Fedora 22
+* Fedora 21
 * CentOS 7 (however a bunch of tools will be missing)
 * Debian 7
 
