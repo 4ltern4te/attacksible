@@ -3,6 +3,9 @@
 - hosts: attacksible
   vars: 
     tools_root: /opt/attacksible
+    rvm1_rubies:
+      - 'ruby-2.1.8'
+      - 'ruby-2.3.0'
   roles:
     - { role: common, become: True }
     - { role: system-packages, become: True }
