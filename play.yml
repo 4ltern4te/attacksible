@@ -4,8 +4,9 @@
   vars: 
     tools_root: /opt/attacksible
     rvm1_rubies:
-      - 'ruby-2.1.8'
-      - 'ruby-2.3.0'
+      - 'ruby-2.1.8' #metasploit
+      - 'ruby-2.2.4' #BeEF
+      - 'ruby-2.3.0' #stable
   roles:
     - { role: common, become: True }
     - { role: system-packages, become: True }
