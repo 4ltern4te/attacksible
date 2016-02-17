@@ -3,9 +3,7 @@ Attacksible
 
 Ansible provisioned security platform.
 
-Tested on:
-* Fedora 21
-* Debian 7,8
+Presently supporting Fedora and Debian.
 
 Features
 -------
@@ -16,8 +14,8 @@ Features
 - Easily install various pentesting, auditing and security related tools. Some are system-wide, otherwise
 categorised in `/opt/attacksible`
 - Various wordlists to `/opt/attacksible/wordlists`
-- Sets up metasploit database
-- Installs ruby via rvm
+- Sets up the metasploit database
+- Install rubys via rvm
 
 There are many more ideas. There are a few bugs.
 
@@ -48,5 +46,5 @@ Usage
 -----
 
 - Tools will be located in `/opt/attacksible`, or otherwise installed globally as system packages
-- Wordlists are available in /opt/attacksible/wordlists
-- Most things require root presently, it's soon on the todo list.  `sudo chown $(whoami): -R /opt/attacksible`
+- Wordlists are available in `/opt/attacksible/wordlists`
+- Most things require root presently, fixing this is on the todo list.  `sudo chown $(whoami): -R /opt/attacksible`
