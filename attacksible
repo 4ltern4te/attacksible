@@ -1,5 +1,2 @@
 [attacksible]
 localhost
-
-[attacksible:vars]
-tools_root=/opt/attacksible

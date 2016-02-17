@@ -1,31 +1,30 @@
 --- 
 
 - hosts: attacksible
-  sudo: yes
   vars: 
     tools_root: /opt/attacksible
-    local_user: "{{ lookup('env','USER') }}"
   roles:
-    - common
-    - system-packages
-    - communication-tools
-    - handy-tools
-#    - network-discovery
-    - web-scanning
-    - dns-tools
-    - smtp-tools
-    - os-tools
-    - exploit-dev
-    - exploit-tools
-    - anon-tools
-    - mobile
-    - network-sniffing
-    - layer2n3-attacks
-    - password-cracking
-    - wifi-tools
-    - rfid
-    - hardware
-    - reverse
-    - hdd-forensics
-    - wordlists
-    - exploit-dev
+    - { role: common, become: True }
+    - { role: system-packages, become: True }
+    - { role: rvm1, tags: ruby, become: True }
+    - { role: communication-tools, become: True }
+    - { role: handy-tools, become: True }
+#    { role: - network-discovery, become: True }
+    - { role: web-scanning, become: True }
+    - { role: dns-tools, become: True }
+    - { role: smtp-tools, become: True }
+    - { role: os-tools, become: True }
+    - { role: exploit-dev, become: True }
+    - { role: exploit-tools, become: True }
+    - { role: anon-tools, become: True }
+    - { role: mobile, become: True }
+    - { role: network-sniffing, become: True }
+    - { role: layer2n3-attacks, become: True }
+    - { role: password-cracking, become: True }
+    - { role: wifi-tools, become: True }
+    - { role: rfid, become: True }
+    - { role: hardware, become: True }
+    - { role: reverse, become: True }
+    - { role: hdd-forensics, become: True }
+    - { role: wordlists, become: True }
+    - { role: exploit-dev, become: True }

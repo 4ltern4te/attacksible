@@ -20,7 +20,6 @@
     - postgresql-devel
     - postgresql
     - python
-    - python-pip
     - python-devel
     - ruby-devel
     - rubygem-bundler
@@ -71,7 +70,6 @@
     - postgresql-server-dev-all
     - postgresql
     - python
-    - python-pip
     - python-dev
     - ruby-dev
     - bundler
@@ -97,11 +95,18 @@
 
 ## All
 
-- name: Make sure pip upgraded
+- name: Make sure pip is installed
   command: easy_install -U pip
 
+- name: Fix pip permissions
+  file:
+    path: /usr/local/bin/pip
+    mode: 0750
+
 - name: "Pip packages"
-  shell: pip install {{ item }} 
+  pip:
+    name: "{{ item }}"
+    state: latest
   with_items:
     - pyinstaller
     - psycopg2

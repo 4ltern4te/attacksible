@@ -5,11 +5,22 @@ Ansible provisioned security platform.
 
 Tested on:
 * Fedora 21
-* CentOS 7 (however a bunch of tools will be missing)
-* Debian 7
+* Debian 7,8
 
-Near future improvements:
-* Install of the software from the git repos pulled in
+Features
+-------
+
+- Run an audit platform on your own host configuration.
+- Quickly spin up fresh machines.
+- Ability to modify the selection of packages and system config.
+- Easily install various pentesting, auditing and security related tools. Some are system-wide, otherwise
+categorised in `/opt/attacksible`
+- Various wordlists to `/opt/attacksible/wordlists`
+- Sets up metasploit database
+- Installs ruby via rvm
+
+There are many more ideas. There are a few bugs.
+
 
 Install
 -----
@@ -36,5 +47,6 @@ These can be excluded by issuing `--skip-tags 'untested'`
 Usage
 -----
 
-Tools will be located in /opt/attacksible, or otherwise installed globally as system packages
-
+- Tools will be located in `/opt/attacksible`, or otherwise installed globally as system packages
+- Wordlists are available in /opt/attacksible/wordlists
+- Most things require root presently, it's soon on the todo list.  `sudo chown $(whoami): -R /opt/attacksible`
