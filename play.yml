@@ -8,27 +8,26 @@
       - 'ruby-2.2.4' #BeEF
       - 'ruby-2.3.0' #stable
   roles:
-    - { role: common, become: True }
-    - { role: system-packages, become: True }
-    - { role: rvm1, tags: ruby, become: True }
-    - { role: communication-tools, become: True }
-    - { role: handy-tools, become: True }
-#    { role: - network-discovery, become: True }
-    - { role: web-scanning, become: True }
-    - { role: dns-tools, become: True }
-    - { role: smtp-tools, become: True }
-    - { role: os-tools, become: True }
-    - { role: exploit-dev, become: True }
-    - { role: exploit-tools, become: True }
-    - { role: anon-tools, become: True }
-    - { role: mobile, become: True }
-    - { role: network-sniffing, become: True }
-    - { role: layer2n3-attacks, become: True }
-    - { role: password-cracking, become: True }
-    - { role: wifi-tools, become: True }
-    - { role: rfid, become: True }
-    - { role: hardware, become: True }
-    - { role: reverse, become: True }
-    - { role: hdd-forensics, become: True }
-    - { role: wordlists, become: True }
-    - { role: exploit-dev, become: True }
+    - { role: common, tags: always, become: True}
+    - { role: system-packages, tags: always, become: True}
+    - { role: rvm1, tags: [ruby, always], become: True }
+    - { role: anon-tools, tags: anon-tools, become: True }
+    - { role: communication-tools, tags: communication-tools, become: True }
+    - { role: dns-tools, tags: dns-tools, become: True }
+    - { role: exploit-dev, tags: exploit-dev, become: True }
+    - { role: exploit-tools, tags: exploit-tools, become: True }
+    - { role: handy-tools, tags: handy-tools, become: True }
+    - { role: hardware, tags: hardware, become: True }
+    - { role: hdd-forensics, tags: hdd-forensics, become: True }
+    - { role: layer2n3-attacks, tags: layer2n3-attacks, become: True }
+    - { role: mobile, tags: mobile, become: True }
+#   - { role: - network-discovery, become: True }
+    - { role: network-sniffing, tags: network-sniffing, become: True }
+    - { role: os-tools, tags: os-tools, become: True }
+    - { role: password-cracking, tags: password-cracking, become: True }
+    - { role: reverse, tags: reverse, become: True }
+    - { role: rfid, tags: rfid, become: True }
+    - { role: smtp-tools, tags: smtp-tools, become: True }
+    - { role: web-scanning, tags: web-scanning, become: True }
+    - { role: wifi-tools, tags: wifi-tools, become: True }
+    - { role: wordlists, tags: wordlists, become: True }
