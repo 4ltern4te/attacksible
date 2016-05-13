@@ -2,7 +2,7 @@
 
 ## Redhat
 - name: 'Package: swaks'
-  yum: name="swaks" state=present
+  package: name="swaks" state=present
   when: ansible_os_family == 'RedHat'
 
 ## Debian

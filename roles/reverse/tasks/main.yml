@@ -4,7 +4,7 @@
 
 ## Redhat
 - name: "Reversing, Decompilers"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - edb
     - binwalk

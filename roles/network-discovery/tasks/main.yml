@@ -6,7 +6,7 @@
 
 ## Redhat
 - name: "network Discovery & Scanning Packages"
-  yum: pkg={{ item }} state=latest
+  package: pkg={{ item }} state=latest
   with_items:
     - hping3
     - nmap
@@ -17,7 +17,7 @@
   when: ansible_os_family == "RedHat"
 
 - name: "Network Discovery - Fedora-only packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - nbtscan
     - intrace
@@ -56,14 +56,11 @@
   command: tar -xzf /tmp/enum4linux.tar.gz -C {{ tools_root }}/info-discovery/enum4linux
 
 - name: "Download MetaGoofil public document metadata extractor"
-  get_url: url=https://metagoofil.googlecode.com/files/metagoofil-2.2.tar.gz dest=/tmp/metagoofil.tar.gz
-- name: "Create metagoofil directory"
-  file: path={{ tools_root }}/info-discovery/metagoofil owner=root state=directory mode=0755
-- name: "Extract MetaGoofil"
-  command: tar -xzf /tmp/metagoofil.tar.gz -C {{ tools_root }}/info-discovery/metagoofil
+  get_url: url=https://github.com/laramies/metagoofil.git dest={{ tools_root }}/info-discovery/metagoofil
 
-- name: "miranda-upnp"
-  subversion: repo=http://miranda-upnp.googlecode.com/svn/trunk/ dest={{ tools_root }}/network-discovery/miranda-upnp
+# No more google code
+#- name: "miranda-upnp"
+#  subversion: repo=http://miranda-upnp.googlecode.com/svn/trunk/ dest={{ tools_root }}/network-discovery/miranda-upnp
 
 - name: "Remove tmp directories"
   command: rm {{ item }}

@@ -2,7 +2,7 @@
 
 ## Redhat
 - name: "Wifi tools"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - iw
     - hostapd
@@ -10,14 +10,14 @@
   when: ansible_os_family == "RedHat"
 
 - name: "Wifi tools - Fedora only"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - aircrack-ng
     - kismet
   when: ansible_distribution == 'Fedora'
 
 - name: "Package: gnuradio"
-  yum: name="gnuradio" state=present
+  package: name="gnuradio" state=present
   when: ansible_os_family == "RedHat"
   tags: gui
 
@@ -45,6 +45,7 @@
 - name: "wifijammer"
   git: repo=https://github.com/DanMcInerney/wifijammer.git dest={{ tools_root }}/wifi-tools/wifijammer
 
-- name: "reaver-wps"
-  subversion: repo=http://reaver-wps.googlecode.com/svn/trunk/ dest={{ tools_root }}/wifi-tools/reaver-wps
-  tags: untested
+    # No more google code.
+#- name: "reaver-wps"
+  #  subversion: repo=http://reaver-wps.googlecode.com/svn/trunk/ dest={{ tools_root }}/wifi-tools/reaver-wps
+  #  tags: untested

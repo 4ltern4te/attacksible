@@ -2,7 +2,7 @@
 
 ## Redhat
 - name: "Package: libnfc and examples"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - libnfc
     - libnfc-examples
@@ -17,6 +17,8 @@
   when: ansible_distribution == 'Debian'
 
 ## All
-- name: "nfc-tools"
-  subversion: repo=http://nfc-tools.googlecode.com/svn/trunk/ dest={{ tools_root }}/rfid/nfc-tools
-  tags: untested
+- name: "mfcuk"
+  git: repo=https://github.com/nfc-tools/mfcuk.git dest={{ tools_root }}/rfid/mfcuk
+
+- name: "mfoc"
+  git: repo=https://github.com/nfc-tools/mfoc.git dest={{ tools_root }}/rfid/mfcoc

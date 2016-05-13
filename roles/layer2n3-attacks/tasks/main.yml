@@ -2,11 +2,11 @@
 
 ## Redhat
 - name: "Layer 2/3 Packages"
-  yum: name="sslsplit" state=present
+  package: name="sslsplit" state=present
   when: ansible_os_family == "RedHat"
 
 - name: "Layer 2/3 tools - fedora-only packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - yersinia
     - sipp

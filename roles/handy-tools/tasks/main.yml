@@ -2,7 +2,7 @@
 
 ## Redhat
 - name: "Handy Tools"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - cadaver
     - tmux
@@ -14,7 +14,7 @@
   when: ansible_os_family == "RedHat"
 
 - name: "Handy tools only available in Fedora"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - macchanger
     - ipcalculator
@@ -23,7 +23,7 @@
   when: ansible_distribution == 'Fedora'
 
 - name: "Handy tools for Desktops"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - recordmydesktop
     - keepassx

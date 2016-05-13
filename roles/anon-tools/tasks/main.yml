@@ -2,7 +2,7 @@
 
 ## Redhat
 - name: "Anonymity and proxy tools - Packages"
-  yum: pkg={{ item }} state=latest
+  package: pkg={{ item }} state=latest
   with_items:
     - tor
     - stunnel
@@ -11,7 +11,7 @@
 
 
 - name: "Anonymity and proxy tools - Packages (Fedora)"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - proxychains
     - proxytunnel

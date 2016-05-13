@@ -3,7 +3,7 @@
 
 ## Redhat
 - name: "Password cracking packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - medusa
     - sucrack
@@ -11,7 +11,7 @@
   when: ansible_os_family == "RedHat"
 
 - name: "Password cracking - Fedora-only packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - ncrack
     - john
@@ -36,5 +36,5 @@
 
 ## All
 
-- name: "Hash Identifier"
-  subversion: repo=http://hash-identifier.googlecode.com/svn/trunk/ dest={{ tools_root }}/password-cracking/hash-identifier
+- name: "HashID"
+  git: repo=https://github.com/psypanda/hashID.git dest={{ tools_root }}/password-cracking/hashID

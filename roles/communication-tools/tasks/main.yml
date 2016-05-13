@@ -1,7 +1,7 @@
 # IRC clients, chat etc
 
 - name: "Package: weechat"
-  yum: name=weechat state=present
+  package: name=weechat state=present
   when: ansible_os_family == "RedHat"
 
 - name: "Package: weechat"

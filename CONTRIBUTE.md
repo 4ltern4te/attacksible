@@ -12,20 +12,20 @@ Example:
 ## REDHAT
 
 - name: "<describe>"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - package_name
   when:
     - ansible_os_family == "RedHat"
 
 - name: "Fedora-only <describe>"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - package_name
   when: ansible_distribution == 'Fedora'
 
 - name: "GUI environment <describe>"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - package_name
   when:

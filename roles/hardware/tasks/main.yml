@@ -3,11 +3,11 @@
 ## Redhat
 
 - name: "Package: minicom"
-  yum: name="minicom" state=present
+  package: name="minicom" state=present
   when: ansible_os_family == "RedHat"
 
 - name: "Package: arduino"
-  yum: name="arduino" state=present
+  package: name="arduino" state=present
   when: ansible_distribution == 'Fedora'
 
 ## Debian

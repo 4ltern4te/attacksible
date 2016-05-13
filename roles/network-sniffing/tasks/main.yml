@@ -5,7 +5,7 @@
 
 ## Redhat
 - name: "Network Sniffing Packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - dsniff
     - tcpreplay
@@ -13,7 +13,7 @@
   when: ansible_os_family == "RedHat"
 
 - name: "Network Sniffing - fedora-only packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - ettercap
     - tcpflow

@@ -4,7 +4,7 @@
 ## REDHAT
 
 - name: "System packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - '@Development tools'
     - clang
@@ -26,6 +26,7 @@
     - java-openjdk
     - net-snmp-utils
     - vim-enhanced
+    - redhat-rpm-config
     - libpcap
     - libpcap-devel
     - p7zip
@@ -36,14 +37,14 @@
     - ansible_os_family == "RedHat"
 
 - name: "Fedora-only sys-packages"
-  yum: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - tsocks
     - pylibpcap
   when: ansible_distribution == 'Fedora'
 
 - name: "GUI environment sys-packages"
-  yum: name=terminator state=present
+  package: name=terminator state=present
   when:
     - ansible_os_family == "RedHat"
   tags: gui
