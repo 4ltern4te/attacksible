@@ -30,6 +30,9 @@ or
     git clone --recursive https://github.com/ansible/ansible.git
     source ansible/hacking/env-setup
 
+It is recommended to reboot your system after the install completes.
+If you experience any issues please raise an issue on github.
+
 ### For the full desktop install
     ansible-playbook play.yml -i attacksible --connection=local -K
 
