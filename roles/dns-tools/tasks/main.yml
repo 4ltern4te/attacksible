@@ -34,3 +34,7 @@
   git: repo=https://github.com/darkoperator/dnsrecon.git dest={{ tools_root }}/dnstools/dnsrecon/
 - name: "Install dsnrecon Requirements"
   shell: pip install -r requirements.txt chdir={{ tools_root }}/dnstools/dnsrecon/
+
+
+- name: "Git: fierce"
+  git: repo=https://github.com/mschwager/fierce.git dest={{ tools_root }}/dnstools/fierce

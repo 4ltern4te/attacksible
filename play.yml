@@ -7,9 +7,13 @@
       - 'ruby-2.1.8' #metasploit
       - 'ruby-2.2.4' #BeEF
       - 'ruby-2.3.0' #stable
+    local_user: "{{ lookup('env','USER') }}"
+    home_directory: "{{ lookup('env', 'HOME') }}"
+
+
   roles:
-    - { role: common, tags: always, become: True}
     - { role: system-packages, tags: always, become: True}
+    - { role: common, tags: always, become: True}
     - { role: rvm1, tags: [ruby, always], become: True }
     - { role: anon-tools, tags: anon-tools, become: True }
     - { role: communication-tools, tags: communication-tools, become: True }
@@ -31,3 +35,4 @@
     - { role: web-scanning, tags: web-scanning, become: True }
     - { role: wifi-tools, tags: wifi-tools, become: True }
     - { role: wordlists, tags: wordlists, become: True }
+    - { role: system-config, tags: system-config, become: True }

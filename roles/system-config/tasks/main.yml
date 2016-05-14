@@ -1,0 +1,10 @@
+# System Configuration
+# These tasks should be run last in the attacksible install
+
+
+- name: "Set /opt/attacksible owner to local user"
+  file:
+    path: "{{ tools_root }}"
+    owner: "{{ local_user }}"
+    group: "{{ local_user }}"
+    recurse: yes

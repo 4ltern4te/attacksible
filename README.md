@@ -5,6 +5,13 @@ Ansible provisioned security platform.
 
 Presently supporting Fedora and Debian.
 
+We plan to do an overhaul of the project shortly...
+- restructure the categories
+- loads of tools to add
+- uplift the configs to newer ansible magic
+- attack automation using the tools installed
+- if we get time we might get the git repo projects (at least the bigger ones) built and installed
+
 Features
 -------
 
@@ -23,7 +30,7 @@ There are many more ideas. There are a few bugs.
 Install
 -----
 
-    sudo yum install ansible || sudo apt-get install ansible
+    sudo yum install ansible || sudo apt-get install ansible || sudo dnf install python-dnf ansible
 
 or
 
