@@ -1,5 +1,8 @@
 ---
 
+- name: "Remove old attacksible install"
+  command: rm -rf /opt/attacksible
+
 - name: "Create a directory tree in /opt"
   file: path={{ tools_root }} state=directory owner={{ local_user }} group={{ local_user }} mode=0700
 
