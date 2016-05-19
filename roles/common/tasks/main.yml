@@ -1,13 +1,33 @@
 ---
 
+# Not using a variable in rm -rf
+- name: "Check for version file"
+  stat: path="{{ tools_root }}/.version"
+  register: versionfile
+
+- name: "Check current installed version"
+  shell: cat {{ tools_root }}/.version
+  register: version
+  when: versionfile.stat.exists
+
 - name: "Remove old attacksible install"
   command: rm -rf /opt/attacksible
+  when: version <= 0.6
+  ignore_errors: True
+
+- name: "Remove old attacksible install"
+  command: rm -rf /opt/attacksible
+  when: not versionfile.stat.exists
+  ignore_errors: True
 
 - name: "Create a directory tree in /opt"
-  file: path={{ tools_root }} state=directory owner={{ local_user }} group={{ local_user }} mode=0700
+  file: path={{ tools_root }} state=directory owner={{ local_user }} group={{ local_group }} mode=0700
+
+- name: "Set attacksible version file"
+  copy: content="{{ attacksible_version }}" dest="{{ tools_root }}/.version" owner={{ local_user }} group={{ local_group }} mode=0600
 
 - name: "Copy: mega.co.nz downloader"
-  copy: src=mega-dl.sh dest=/tmp/ owner={{ local_user }} group={{ local_user }} mode=0700
+  copy: src=mega-dl.sh dest=/tmp/ owner="{{ local_user }}" group="{{ local_group }}" mode=0700
 
 - name: "apt-get update package sources"
   command: apt-get update

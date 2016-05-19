@@ -4,53 +4,37 @@
 - name: "Handy Tools"
   package: name={{ item }} state=present
   with_items:
-    - cadaver
-    - tmux
-    - screen
-    - socat
-    - ngrep
-    - md5deep
-    - perl-Image-ExifTool
-  when: ansible_os_family == "RedHat"
-
-- name: "Handy tools only available in Fedora"
-  package: name={{ item }} state=present
-  with_items:
-    - macchanger
     - ipcalculator
-    - ike
-    - tcplay
+    - perl-Image-ExifTool
+    - ShellCheck
   when: ansible_distribution == 'Fedora'
-
-- name: "Handy tools for Desktops"
-  package: name={{ item }} state=present
-  with_items:
-    - recordmydesktop
-    - keepassx
-  when: ansible_os_family == "RedHat"
-  tags: gui
 
 ## Debian
 - name: "Handy Tools"
   package: name={{ item }} state=present
   with_items:
+    - ipcalc
+    - libimage-exiftool-perl
+    - shellcheck
+  when: ansible_os_family == "Debian"
+
+# ALL
+- name: "Handy Tools"
+  package: name={{ item }} state=present
+  with_items:
     - cadaver
-    - tmux
+    - ike
+    - macchanger
+    - md5deep
+    - ngrep
     - screen
     - socat
-    - ngrep
-    - md5deep
-    - libimage-exiftool-perl
-    - macchanger
-    - ipcalc
-    - ike
     - tcplay
-  when: ansible_os_family == "Debian"
+    - tmux
 
 - name: "Handy tools for Desktops"
   package: name={{ item }} state=present
   with_items:
-    - recordmydesktop
     - keepassx
-  when: ansible_os_family == "Debian"
+    - recordmydesktop
   tags: gui

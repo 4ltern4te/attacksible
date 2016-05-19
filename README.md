@@ -62,4 +62,3 @@ Usage
 
 - Tools will be located in `/opt/attacksible`, or otherwise installed globally as system packages
 - Wordlists are available in `/opt/attacksible/wordlists`
-- Most things require root presently, fixing this is on the todo list.  `sudo chown $(whoami): -R /opt/attacksible`

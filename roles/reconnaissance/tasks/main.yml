@@ -1,11 +1,18 @@
 ## Recon
 
+- name: "Download enum4linux Samba Enumerator"
+  get_url: url=https://labs.portcullis.co.uk/download/enum4linux-0.8.9.tar.gz dest=/tmp/enum4linux.tar.gz
+- name: "Create enum4linux directory"
+  file: path={{ tools_root }}/reconnaissance/enum4linux owner=root state=directory mode=0755
+- name: "Extract enum4linux"
+  command: tar -xzf /tmp/enum4linux.tar.gz -C {{ tools_root }}/reconnaissance/enum4linux
+
 - name: "Git: recon-ng"
-  git: repo=https://bitbucket.org/LaNMaSteR53/recon-ng.git dest={{ tools_root }}/info-discovery/recon-ng
+  git: repo=https://bitbucket.org/LaNMaSteR53/recon-ng.git dest={{ tools_root }}/reconnaissance/recon-ng
 
 - name: "Git: fast-recon"
-  git: repo=https://github.com/DanMcInerney/fast-recon dest={{ tools_root }}/info-discovery/fast-recon
+  git: repo=https://github.com/DanMcInerney/fast-recon dest={{ tools_root }}/reconnaissance/fast-recon
 
 - name: "Download MetaGoofil public document metadata extractor"
-  get_url: url=https://github.com/laramies/metagoofil.git dest={{ tools_root }}/info-discovery/metagoofil
+  get_url: url=https://github.com/laramies/metagoofil.git dest={{ tools_root }}/reconnaissance/metagoofil
 

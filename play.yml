@@ -2,12 +2,14 @@
 
 - hosts: attacksible
   vars: 
+    attacksible_version: 0.7
     tools_root: /opt/attacksible
     rvm1_rubies:
       - 'ruby-2.3.1' #metasploit
       - 'ruby-2.2.4' #BeEF
-      - 'ruby-2.3.0' #stable
+      - 'ruby-2.3.1' #stable
     local_user: "{{ lookup('env','USER') }}"
+    local_group: "{{ lookup('env','USER') }}"
     home_directory: "{{ lookup('env', 'HOME') }}"
 
 
