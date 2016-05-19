@@ -4,7 +4,7 @@
   vars: 
     tools_root: /opt/attacksible
     rvm1_rubies:
-      - 'ruby-2.1.8' #metasploit
+      - 'ruby-2.3.1' #metasploit
       - 'ruby-2.2.4' #BeEF
       - 'ruby-2.3.0' #stable
     local_user: "{{ lookup('env','USER') }}"

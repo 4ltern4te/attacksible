@@ -1,26 +1,19 @@
 # System Packages / Dev Packages
 # Firewall rules / Antivirus / Logging / OS House clean / System Debug Tools
 
-## REDHAT
+
+## FEDORA
 
 - name: "System packages"
   package: name={{ item }} state=present
   with_items:
     - '@Development tools'
-    - clang
     - dhcp
-    - patch
     - pth
-    - clamav
-    - ferm
-    - htop
-    - lighttpd
     - libselinux-python
     - mysql
     - postgresql-server
     - postgresql-devel
-    - postgresql
-    - python
     - python-devel
     - ruby-devel
     - rubygem-bundler
@@ -30,49 +23,23 @@
     - redhat-rpm-config
     - libpcap
     - libpcap-devel
-    - p7zip
-    - lldb
-    - zlib-devel
-    - http://keepnote.org/download/keepnote-0.7.8-1.noarch.rpm
-  when:
-    - ansible_os_family == "RedHat"
-
-- name: "Fedora-only sys-packages"
-  package: name={{ item }} state=present
-  with_items:
-    - tsocks
     - pylibpcap
     - python-dnf-plugins-core
+    - zlib-devel
+    - http://keepnote.org/download/keepnote-0.7.8-1.noarch.rpm
   when: ansible_distribution == 'Fedora'
-
-- name: "GUI environment sys-packages"
-  package: name=terminator state=present
-  when:
-    - ansible_os_family == "RedHat"
-  tags: gui
-
 
 ## DEBIAN
 
 - name: "System packages"
   package: name={{ item }} state=present
   with_items:
-#    - '"@Development tools"'
-    - clang
     - curl
-    - patch
-#    - pth
-    - clamav
-    - ferm
-    - htop
     - keepnote
     - libcapstone-dev
-    - lighttpd
     - mysql-client
     - postgresql
     - postgresql-server-dev-all
-    - postgresql
-    - python
     - python-dev
     - ruby-dev
     - bundler
@@ -80,23 +47,33 @@
     - snmp
     - vim
     - libpcap-dev
-    - p7zip
     - python-libpcap
-    - tsocks
-    - lldb
     - zlib1g-dev
     - subversion
     - libsqlite3-dev
   when:
     - ansible_os_family == "Debian"
 
+## All
+
+- name: "System packages"
+  package: name={{ item }} state=present
+  with_items:
+    - clang
+    - patch
+    - clamav
+    - ferm
+    - htop
+    - lighttpd
+    - postgresql
+    - python
+    - p7zip
+    - lldb
+    - tsocks
+
 - name: "GUI environment sys-packages"
   package: name=terminator state=present
-  when:
-    - ansible_os_family == "Debian"
   tags: gui
-
-## All
 
 - name: Make sure pip is installed
   command: easy_install -U pip
