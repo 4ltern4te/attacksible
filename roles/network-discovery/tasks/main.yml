@@ -25,7 +25,7 @@
 
 ## Debian
 - name: "network Discovery & Scanning Packages"
-  apt: pkg={{ item }} state=latest
+  package: pkg={{ item }} state=latest
   with_items:
     - hping3
     - nmap

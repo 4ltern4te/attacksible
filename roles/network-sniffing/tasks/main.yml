@@ -21,7 +21,7 @@
 
 ## Debian
 - name: "Network Sniffing Packages"
-  apt: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - dsniff
     - ettercap-text-only
@@ -33,7 +33,7 @@
 
 ## Debian
 - name: "Network Sniffing Packages"
-  apt: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - ettercap-graphical
   when: ansible_os_family == "Debian"

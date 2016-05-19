@@ -55,7 +55,7 @@
 ## DEBIAN
 
 - name: "System packages"
-  apt: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
 #    - '"@Development tools"'
     - clang
@@ -91,7 +91,7 @@
     - ansible_os_family == "Debian"
 
 - name: "GUI environment sys-packages"
-  apt: name=terminator state=present
+  package: name=terminator state=present
   when:
     - ansible_os_family == "Debian"
   tags: gui

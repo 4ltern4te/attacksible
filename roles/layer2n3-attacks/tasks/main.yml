@@ -17,7 +17,7 @@
 
 ## Debian
 - name: "Layer 2/3 Packages"
-  apt: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - yersinia
     - sipsak

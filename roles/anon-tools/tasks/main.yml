@@ -19,7 +19,7 @@
 
 ## Debian
 - name: "Anonymity and proxy tools (Packages)"
-  apt: pkg={{ item }} state=latest
+  package: pkg={{ item }} state=latest
   with_items:
     - tor
     - stunnel

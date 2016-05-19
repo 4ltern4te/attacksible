@@ -10,7 +10,7 @@
 
 ## Redhat
 - name: "Package: libnfc and examples"
-  apt: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - libnfc-dev
     - libnfc-examples

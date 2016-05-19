@@ -1,14 +1,11 @@
 ---
 
-- name: "Remove current tool set in /opt"
-  file: path={{ tools_root }} state=absent
-
 - name: "Create a directory tree in /opt"
   file: path={{ tools_root }} state=directory owner={{ local_user }} group={{ local_user }} mode=0700
 
 - name: "Copy: mega.co.nz downloader"
   copy: src=mega-dl.sh dest=/tmp/ owner={{ local_user }} group={{ local_user }} mode=0700
 
-- name: update apt sources
-  command: apt-get update
+- name: update package sources
+  command: package-get update
   when: ansible_os_family == "Debian"

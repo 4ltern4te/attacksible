@@ -23,7 +23,7 @@
 
 ## Debian
 - name: "Password cracking packages"
-  apt: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - medusa
     - sucrack

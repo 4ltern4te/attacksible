@@ -7,7 +7,7 @@
 
 ## Debian
 - name: 'Package: swaks'
-  apt: name="swaks" state=present
+  package: name="swaks" state=present
   when: ansible_os_family == 'Debian'
 
 # All
