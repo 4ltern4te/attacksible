@@ -16,7 +16,6 @@
     - { role: common, tags: always, become: True}
     - { role: rvm1, tags: [ruby, always], become: True }
     - { role: anonymisation, tags: anonymisation, become: True }
-    - { role: communication-tools, tags: communication-tools, become: True }
     - { role: dns-tools, tags: dns-tools, become: True }
     - { role: exploit-dev, tags: exploit-dev, become: True }
     - { role: exploitation, tags: exploitation, become: True }
