@@ -1,0 +1,11 @@
+## Recon
+
+- name: "Git: recon-ng"
+  git: repo=https://bitbucket.org/LaNMaSteR53/recon-ng.git dest={{ tools_root }}/info-discovery/recon-ng
+
+- name: "Git: fast-recon"
+  git: repo=https://github.com/DanMcInerney/fast-recon dest={{ tools_root }}/info-discovery/fast-recon
+
+- name: "Download MetaGoofil public document metadata extractor"
+  get_url: url=https://github.com/laramies/metagoofil.git dest={{ tools_root }}/info-discovery/metagoofil
+

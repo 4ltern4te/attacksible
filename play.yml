@@ -30,8 +30,9 @@
     - { role: os-tools, tags: os-tools, become: True }
     - { role: passwords, tags: passwords, become: True }
     - { role: reversing, tags: reversing, become: True }
+    - { role: reconnaissance, tags: reconnaissance, become: True }
     - { role: email-tools, tags: email-tools, become: True }
     - { role: web, tags: web, become: True }
-    - { role: wifi-tools, tags: wifi-tools, become: True }
+    - { role: wireless, tags: wireless, become: True }
     - { role: wordlists, tags: wordlists, become: True }
     - { role: system-config, tags: system-config, become: True }
