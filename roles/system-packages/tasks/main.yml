@@ -59,17 +59,18 @@
 - name: "System packages"
   package: name={{ item }} state=present
   with_items:
-    - clang
-    - patch
     - clamav
+    - clang
     - ferm
     - htop
     - lighttpd
+    - lldb
+    - patch
+    - p7zip
     - postgresql
     - python
-    - p7zip
-    - lldb
     - tsocks
+    - weechat
 
 - name: "GUI environment sys-packages"
   package: name=terminator state=present
