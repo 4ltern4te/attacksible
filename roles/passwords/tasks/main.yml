@@ -34,7 +34,13 @@
     - chntpw
   when: ansible_os_family == "Debian"
 
-## All
+## Hashes
 
 - name: "Git: HashID"
-  git: repo=https://github.com/psypanda/hashID.git dest={{ tools_root }}/password-cracking/hashID
+  git: repo=https://github.com/psypanda/hashID.git dest={{ tools_root }}/passwords/hashID
+
+# Brute Force Tools
+
+- name: "Git: patator"
+  git: repo=https://github.com/lanjelot/patator.git dest={{ tools_root }}/passwords/patator
+

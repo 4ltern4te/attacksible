@@ -1,5 +1,0 @@
-# Brute Force Tools
-
-- name: "Git: patator"
-  git: repo=https://github.com/lanjelot/patator.git dest={{ tools_root }}/brute-force/patator
-

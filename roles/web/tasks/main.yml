@@ -25,17 +25,17 @@
 
 ## All
 - name: "Git: wfuzz"
-  git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/web-scanning/wfuzz
+  git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/web/wfuzz
 
 - name: "Git: dvcs-ripper"
-  git: repo=https://github.com/kost/dvcs-ripper.git dest={{ tools_root }}/web-scanning/dvcs-ripper
+  git: repo=https://github.com/kost/dvcs-ripper.git dest={{ tools_root }}/web/dvcs-ripper
   tags: untested
 
 - name: "Git: c5scan"
-  git: repo=https://github.com/auraltension/c5scan.git dest={{ tools_root }}/web-scanning/c5scan
+  git: repo=https://github.com/auraltension/c5scan.git dest={{ tools_root }}/web/c5scan
 
 - name: "Git: wpscan"
-  git: repo=https://github.com/wpscanteam/wpscan.git dest={{ tools_root }}/web-scanning/wpscan
+  git: repo=https://github.com/wpscanteam/wpscan.git dest={{ tools_root }}/web/wpscan
 
 - name: "bundle install for wpscan"
-  shell: bundle install chdir={{ tools_root }}/web-scanning/wpscan
+  shell: bundle install chdir={{ tools_root }}/web/wpscan
