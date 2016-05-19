@@ -44,3 +44,9 @@
 - name: "Git: patator"
   git: repo=https://github.com/lanjelot/patator.git dest={{ tools_root }}/passwords/patator
 
+- name: "Brute force packages" 
+  package: name={{ item }} state=present 
+    with_items: 
+      - hydra 
+
+

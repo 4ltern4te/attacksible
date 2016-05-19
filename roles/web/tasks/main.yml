@@ -23,6 +23,13 @@
     - sslscan
   when: ansible_distribution == 'Debian'
 
+## All 
+
+- name: "Exploitation packages" 
+  package: name={{ item }} state=present 
+    with_items: 
+    - skipfish 
+
 ## All
 - name: "Git: wfuzz"
   git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/web/wfuzz
