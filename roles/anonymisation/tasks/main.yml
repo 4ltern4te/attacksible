@@ -1,0 +1,14 @@
+# Anonymity
+
+## All
+- name: "Anonymity and proxy tools - Packages"
+  package: pkg={{ item }} state=latest
+  with_items:
+    - tor
+    - stunnel
+    - iodine
+    - proxychains
+    - proxytunnel
+
+- name: "Git: Onionshare"
+  git: repo=https://github.com/micahflee/onionshare dest={{ tools_root }}/anonymisation/onionshare
