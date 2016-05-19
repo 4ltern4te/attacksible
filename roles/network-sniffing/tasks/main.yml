@@ -1,8 +1,5 @@
 # Network Sniffing
 
-- name: "Create network-sniffing directory"
-  file: path={{ tools_root }}/network-sniffing owner=root state=directory mode=0755
-
 ## Redhat
 - name: "Network Sniffing Packages"
   package: name={{ item }} state=present

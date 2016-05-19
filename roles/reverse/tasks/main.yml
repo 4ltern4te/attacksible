@@ -1,8 +1,5 @@
 # Reverse Engineering / Decompilers
 
-- name: "Create info-discovery directory"
-  file: path={{ tools_root }}/reversing owner=root state=directory mode=0755
-
 ## Redhat
 - name: "Reversing, Decompilers"
   package: name={{ item }} state=present

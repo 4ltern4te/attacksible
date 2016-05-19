@@ -18,7 +18,7 @@
     - foremost
     - safecopy
     - recoverjpeg
-  when: ansible_distribution == 'fedora'
+  when: ansible_distribution == 'Fedora'
 
 ## Debian
 - name: "HDD Forensics packages"

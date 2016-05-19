@@ -17,8 +17,10 @@
   when: ansible_distribution == 'Debian'
 
 ## All
-- name: "mfcuk"
+
+
+- name: "Git: mfcuk"
   git: repo=https://github.com/nfc-tools/mfcuk.git dest={{ tools_root }}/rfid/mfcuk
 
-- name: "mfoc"
-  git: repo=https://github.com/nfc-tools/mfoc.git dest={{ tools_root }}/rfid/mfcoc
+- name: "Git: mfoc"
+  git: repo=https://github.com/nfc-tools/mfoc.git dest={{ tools_root }}/rfid/mfoc

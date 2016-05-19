@@ -36,5 +36,5 @@
 
 ## All
 
-- name: "HashID"
+- name: "Git: HashID"
   git: repo=https://github.com/psypanda/hashID.git dest={{ tools_root }}/password-cracking/hashID
