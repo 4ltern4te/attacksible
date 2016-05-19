@@ -22,7 +22,7 @@
     - { role: exploitation, tags: exploitation, become: True }
     - { role: handy-tools, tags: handy-tools, become: True }
     - { role: hardware, tags: hardware, become: True }
-    - { role: hdd-forensics, tags: hdd-forensics, become: True }
+    - { role: forensics, tags: forensics, become: True }
     - { role: layer2n3-attacks, tags: layer2n3-attacks, become: True }
     - { role: mobile, tags: mobile, become: True }
 #   - { role: - network-discovery, become: True }

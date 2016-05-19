@@ -1,0 +1,28 @@
+# Forensics tools
+
+## Redhat
+- name: "Forensics packages"
+  package: name={{ item }} state=present
+  with_items:
+    - ddrescue
+  when: ansible_distribution == 'Fedora'
+
+## Debian
+- name: "Forensics packages"
+  package: name={{ item }} state=present
+  with_items:
+    - gddrescue
+  when: ansible_os_family == "Debian"
+
+## All
+- name: "Forensics packages"
+  package: name={{ item }} state=present
+  with_items:
+    - dc3dd
+    - dcfldd
+    - scalpel
+    - testdisk
+    - extundelete
+    - foremost
+    - safecopy
+    - recoverjpeg
