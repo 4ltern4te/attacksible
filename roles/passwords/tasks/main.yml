@@ -46,7 +46,7 @@
 
 - name: "Brute force packages" 
   package: name={{ item }} state=present 
-    with_items: 
-      - hydra 
+  with_items: 
+    - hydra 
 
 

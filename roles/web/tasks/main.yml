@@ -27,7 +27,7 @@
 
 - name: "Exploitation packages" 
   package: name={{ item }} state=present 
-    with_items: 
+  with_items: 
     - skipfish 
 
 ## All
