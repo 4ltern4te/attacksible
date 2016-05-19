@@ -16,16 +16,13 @@
     - { role: common, tags: always, become: True}
     - { role: rvm1, tags: [ruby, always], become: True }
     - { role: anonymisation, tags: anonymisation, become: True }
-    - { role: dns-tools, tags: dns-tools, become: True }
     - { role: exploit-dev, tags: exploit-dev, become: True }
     - { role: exploitation, tags: exploitation, become: True }
     - { role: handy-tools, tags: handy-tools, become: True }
     - { role: hardware, tags: hardware, become: True }
     - { role: forensics, tags: forensics, become: True }
-    - { role: layer2n3-attacks, tags: layer2n3-attacks, become: True }
     - { role: mobile, tags: mobile, become: True }
-#   - { role: - network-discovery, become: True }
-    - { role: network-sniffing, tags: network-sniffing, become: True }
+    - { role: network, tags: network, become: True }
     - { role: os-tools, tags: os-tools, become: True }
     - { role: passwords, tags: passwords, become: True }
     - { role: reversing, tags: reversing, become: True }
