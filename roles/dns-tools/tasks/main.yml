@@ -1,11 +1,8 @@
-# DNS
-
-- name: "DNS tools - Create dnstools directory"
-  file: path={{ tools_root }}/dnstools owner=root state=directory mode=0755
+# DNS tools
 
 ## Redhat
 
-- name: "DNS tools  - Packages"
+- name: "Packages: DNS Tools"
   package: name={{ item }} state=present
   with_items:
     - lbd
@@ -13,7 +10,7 @@
   when: ansible_os_family == "RedHat"
 
 
-- name: "DNS tools - Packages (Fedora)"
+- name: "Packages: DNS Tools"
   package: name={{ item }} state=present
   with_items:
     - dnstracer
@@ -22,7 +19,7 @@
 
 ## Debian
 
-- name: "DNS tools - Packages"
+- name: "Packages: DNS Tools"
   package: name={{ item }} state=present
   with_items:
     - dnstracer
@@ -32,7 +29,7 @@
  
 - name: "Git: dnsrecon"
   git: repo=https://github.com/darkoperator/dnsrecon.git dest={{ tools_root }}/dnstools/dnsrecon/
-- name: "Install dsnrecon Requirements"
+- name: "Pip: Install dsnrecon Requirements"
   shell: pip install -r requirements.txt chdir={{ tools_root }}/dnstools/dnsrecon/
 
 

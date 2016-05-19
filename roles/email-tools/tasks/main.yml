@@ -1,4 +1,4 @@
-# SMTP
+# Email tools
 
 ## Redhat
 - name: 'Package: swaks'
@@ -13,7 +13,7 @@
 # All
 
 - name: "Creating email directory"
-  file: path={{ tools_root }}/email owner={{ local_user }} group={{ local_user }} state=directory mode=0700
+  file: path={{ tools_root }}/email-tools owner={{ local_user }} group={{ local_user }} state=directory mode=0700
 
 - name: "git clone SimpleEmailSpoofer"
-  git: repo=https://github.com/lunarca/SimpleEmailSpoofer.git dest={{ tools_root }}/email/SimpleEmailSpoofer
+  git: repo=https://github.com/lunarca/SimpleEmailSpoofer.git dest={{ tools_root }}/email-tools/SimpleEmailSpoofer

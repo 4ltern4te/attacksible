@@ -38,11 +38,11 @@
   tags: gui
 
 ## All
-- name: "wifite"
+- name: "Git: wifite"
   git: repo=https://github.com/derv82/wifite dest={{ tools_root }}/wifi-tools/wifite
   tags: untested
 
-- name: "wifijammer"
+- name: "Git: wifijammer"
   git: repo=https://github.com/DanMcInerney/wifijammer.git dest={{ tools_root }}/wifi-tools/wifijammer
 
     # No more google code.

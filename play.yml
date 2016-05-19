@@ -16,6 +16,7 @@
     - { role: common, tags: always, become: True}
     - { role: rvm1, tags: [ruby, always], become: True }
     - { role: anon-tools, tags: anon-tools, become: True }
+    - { role: brute-force, tags: brute-force, become: True }
     - { role: communication-tools, tags: communication-tools, become: True }
     - { role: dns-tools, tags: dns-tools, become: True }
     - { role: exploit-dev, tags: exploit-dev, become: True }
@@ -31,7 +32,7 @@
     - { role: password-cracking, tags: password-cracking, become: True }
     - { role: reverse, tags: reverse, become: True }
     - { role: rfid, tags: rfid, become: True }
-    - { role: smtp-tools, tags: smtp-tools, become: True }
+    - { role: email-tools, tags: email-tools, become: True }
     - { role: web-scanning, tags: web-scanning, become: True }
     - { role: wifi-tools, tags: wifi-tools, become: True }
     - { role: wordlists, tags: wordlists, become: True }
