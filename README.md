@@ -37,20 +37,25 @@ or
     git clone --recursive https://github.com/ansible/ansible.git
     source ansible/hacking/env-setup
 
-It is recommended to reboot your system after the install completes.
-If you experience any issues please raise an issue on github.
-
 ### For the full desktop install
-    ansible-playbook play.yml -i attacksible --connection=local -K
+    ansible-playbook play.yml -i attacksible --connection=local -K --skip-tags "exploitdb"
 
 ### Headless
-    ansible-playbook play.yml -i attacksible --skip-tags 'gui' --connection=local -K
+    ansible-playbook play.yml -i attacksible --skip-tags 'gui,exploitdb' --connection=local -K
 
 ### Untested software
 Software we're yet to confirm as stable in the system has been tagged with 'untested'.  
 These can be excluded by issuing `--skip-tags 'untested'`
 
-    ansible-playbook play.yml -i attacksible --skip-tags 'untested' --connection=local -K
+    ansible-playbook play.yml -i attacksible --skip-tags 'untested,exploitdb' --connection=local -K
+
+### Exploit-DB
+You'll notice that each of the above install lines are skipping `exploitdb`. This is because it's quite large.
+You can easily include the pulling down of the exploit-db repository by removing this from `--skip-tags`
+
+It is recommended to reboot your system after the install completes.
+If you experience any issues please raise an issue on github.
+
 
 Usage
 -----

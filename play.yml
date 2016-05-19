@@ -20,7 +20,7 @@
     - { role: communication-tools, tags: communication-tools, become: True }
     - { role: dns-tools, tags: dns-tools, become: True }
     - { role: exploit-dev, tags: exploit-dev, become: True }
-    - { role: exploit-tools, tags: exploit-tools, become: True }
+    - { role: exploitation, tags: exploitation, become: True }
     - { role: handy-tools, tags: handy-tools, become: True }
     - { role: hardware, tags: hardware, become: True }
     - { role: hdd-forensics, tags: hdd-forensics, become: True }
