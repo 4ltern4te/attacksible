@@ -5,7 +5,7 @@ Ansible provisioned security platform.
 
 Presently supporting Fedora and Debian.
 
-We plan to do an overhaul of the project shortly...
+We are in the midst of a bit of an overhaul..
 - restructure the categories
 - loads of tools to add
 - uplift the configs to newer ansible magic
