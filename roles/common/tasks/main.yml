@@ -12,7 +12,7 @@
 
 - name: "Remove old attacksible install"
   command: rm -rf /opt/attacksible
-  when: version <= 0.6
+  when: version <= 0.7
   ignore_errors: True
 
 - name: "Remove old attacksible install"
