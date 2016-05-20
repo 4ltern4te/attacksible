@@ -99,3 +99,44 @@
 
 - name: Start postgresql
   service: name=postgresql enabled=no state=started
+
+# Tools
+
+## Redhat
+- name: "Handy Tools"
+  package: name={{ item }} state=present
+  with_items:
+    - ipcalculator
+    - perl-Image-ExifTool
+    - ShellCheck
+  when: ansible_distribution == 'Fedora'
+
+## Debian
+- name: "Handy Tools"
+  package: name={{ item }} state=present
+  with_items:
+    - ipcalc
+    - libimage-exiftool-perl
+    - shellcheck
+  when: ansible_os_family == "Debian"
+
+# ALL
+- name: "Handy Tools"
+  package: name={{ item }} state=present
+  with_items:
+    - cadaver
+    - ike
+    - macchanger
+    - md5deep
+    - ngrep
+    - screen
+    - socat
+    - tcplay
+    - tmux
+
+- name: "Handy tools for Desktops"
+  package: name={{ item }} state=present
+  with_items:
+    - keepassx
+    - recordmydesktop
+  tags: gui
