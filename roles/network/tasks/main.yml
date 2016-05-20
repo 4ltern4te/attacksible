@@ -66,8 +66,3 @@
 
 - name: "git clone net-creds"
   git: repo=https://github.com/DanMcInerney/net-creds.git dest={{ tools_root }}/network/net-creds
-
-- name: "Remove tmp directories"
-  command: rm {{ item }}
-  with_items:
-    - /tmp/enum4linux.tar.gz

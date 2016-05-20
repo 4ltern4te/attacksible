@@ -16,3 +16,7 @@
 - name: "Download MetaGoofil public document metadata extractor"
   get_url: url=https://github.com/laramies/metagoofil.git dest={{ tools_root }}/reconnaissance/metagoofil
 
+- name: "Remove tmp directories"
+  command: rm {{ item }}
+  with_items:
+    - /tmp/enum4linux.tar.gz
