@@ -8,6 +8,7 @@
       - 'ruby-2.3.1' #metasploit
       - 'ruby-2.2.4' #BeEF
       - 'ruby-2.3.1' #stable
+    rvm1_user: "{{ lookup('env','USER') }}"
     rvm1_install_flags: "--auto-dotfiles --user-install"
     rvm1_install_path: "/home/{{ lookup('env','USER') }}/.rvm"
     local_user: "{{ lookup('env','USER') }}"
