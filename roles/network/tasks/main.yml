@@ -1,7 +1,7 @@
 # Network tools
 
 ## Redhat
-- name: "Packages: Network Tools"
+- name: "Packages: Network Tools (Fedora)"
   package: name={{ item }} state=present
   with_items:
     - lbd
@@ -17,7 +17,7 @@
   when: ansible_distribution == 'Fedora'
 
 ## Debian
-- name: "Packages: Network Tools"
+- name: "Packages: Network Tools (Debian)"
   package: name={{ item }} state=present
   with_items:
     - ettercap-text-only
@@ -25,7 +25,7 @@
     - wakeonlan
   when: ansible_os_family == "Debian"
 
-- name: "packages: Network Tools (graphical)"
+- name: "Packages: Network Tools (graphical) (Debian)"
   package: name={{ item }} state=present
   with_items:
     - ettercap-graphical
@@ -38,17 +38,19 @@
   with_items:
     - dnstracer
     - dsniff
+    - fping
+    - hping3
+    - nbtscan
+    - nmap
+    - onesixtyone
+    - p0f
     - sipsak
     - sslstrip
+    - swaks
     - tcpflow
     - tcpreplay
     - wireshark
     - yersinia
-    - hping3
-    - nmap
-    - onesixtyone
-    - fping
-    - nbtscan
  
 - name: "git clone dnsrecon"
   git: repo=https://github.com/darkoperator/dnsrecon.git dest={{ tools_root }}/network/dnsrecon/
@@ -67,39 +69,5 @@
 - name: "git clone net-creds"
   git: repo=https://github.com/DanMcInerney/net-creds.git dest={{ tools_root }}/network/net-creds
 
-
-# Email tools
-
-## Redhat
-- name: 'Package: swaks'
-  package: name="swaks" state=present
-  when: ansible_os_family == 'RedHat'
-
-## Debian
-- name: 'Package: swaks'
-  package: name="swaks" state=present
-  when: ansible_os_family == 'Debian'
-
-- name: "Creating email directory"
-  file: path={{ tools_root }}/email-tools owner={{ local_user }} group={{ local_user }} state=directory mode=0700
-
 - name: "git clone SimpleEmailSpoofer"
-  git: repo=https://github.com/lunarca/SimpleEmailSpoofer.git dest={{ tools_root }}/email-tools/SimpleEmailSpoofer
-
-
-# OS profiling 
-
-## Redhat
-- name: "OS profiling packages - Fedora only"
-  package: name={{ item }} state=present
-  with_items:
-    - p0f
-  when: ansible_distribution == 'Fedora'
-
-## Debian
-- name: "OS profiling packages"
-  package: name={{ item }} state=present
-  with_items:
-    - p0f
-  when: ansible_distribution == 'Debian'
-
+  git: repo=https://github.com/lunarca/SimpleEmailSpoofer.git dest={{ tools_root }}/network/SimpleEmailSpoofer
