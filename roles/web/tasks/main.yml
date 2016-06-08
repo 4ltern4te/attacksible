@@ -1,42 +1,19 @@
 # Web Scanning
 
-## Redhat
-- name: "Web Scanning - Fedora-only packages"
-  package: name={{ item }} state=present
-  with_items: 
-    - nikto
-  when: ansible_distribution == 'Fedora'
- 
 - name: "Web Scanning Packages"
   package: name={{ item }} state=present
   with_items:
-    - ssldump
-    - sslscan
-  when: ansible_os_family == "RedHat"
-
-## Debain
-- name: "Web Scanning - Fedora-only packages"
-  package: name={{ item }} state=present
-  with_items: 
     - nikto
+    - skipfish 
     - ssldump
     - sslscan
-  when: ansible_distribution == 'Debian'
+    - testssl
 
-## All 
-
-- name: "Exploitation packages" 
-  package: name={{ item }} state=present 
-  with_items: 
-    - skipfish 
-
-## All
 - name: "Git: wfuzz"
   git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/web/wfuzz
 
 - name: "Git: dvcs-ripper"
   git: repo=https://github.com/kost/dvcs-ripper.git dest={{ tools_root }}/web/dvcs-ripper
-  tags: untested
 
 - name: "Git: c5scan"
   git: repo=https://github.com/auraltension/c5scan.git dest={{ tools_root }}/web/c5scan
@@ -44,5 +21,5 @@
 - name: "Git: wpscan"
   git: repo=https://github.com/wpscanteam/wpscan.git dest={{ tools_root }}/web/wpscan
 
-- name: "bundle install for wpscan"
+- name: "wpscan: bundle install"
   shell: bundle install chdir={{ tools_root }}/web/wpscan
