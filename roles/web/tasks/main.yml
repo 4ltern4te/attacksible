@@ -9,6 +9,13 @@
     - sslscan
     - testssl
 
+- name: "Web scanning: pip packages"
+  pip:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - sslyze
+
 - name: "Git: wfuzz"
   git: repo=https://github.com/xmendez/wfuzz.git dest={{ tools_root }}/web/wfuzz
 
