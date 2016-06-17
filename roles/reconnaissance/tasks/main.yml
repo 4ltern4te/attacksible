@@ -13,6 +13,9 @@
 - name: "Git: fast-recon"
   git: repo=https://github.com/DanMcInerney/fast-recon dest={{ tools_root }}/reconnaissance/fast-recon
 
+- name: "Git: ldapdomaindump"
+  git: repo=https://github.com/dirkjanm/ldapdomaindump.git dest={{ tools_root }}/reconnaissance/ldapdomaindump
+
 - name: "Download MetaGoofil public document metadata extractor"
   get_url: url=https://github.com/laramies/metagoofil.git dest={{ tools_root }}/reconnaissance/metagoofil
 
