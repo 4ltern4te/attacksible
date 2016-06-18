@@ -69,6 +69,7 @@
     - p7zip
     - postgresql
     - python
+    - python-setuptools
     - tsocks
     - weechat
 
