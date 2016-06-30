@@ -7,7 +7,18 @@
     - skipfish 
     - ssldump
     - sslscan
+
+- name: "Web Scanning Packages: Fedora only"
+  package: name={{ item }} state=present
+  with_items:
     - testssl
+  when: ansible_os_family == "Redhat"
+
+- name: "Web Scanning Packages: Debian only"
+  package: name={{ item }} state=present
+  with_items:
+    - testssl.sh
+  when: ansible_os_family == "Debian"
 
 - name: "Web scanning: pip packages"
   pip:
