@@ -23,7 +23,7 @@ iv="${b64_hex_key:32:16}0000000000000000"
 json_data=`curl --silent --request POST --data-binary '[{"a":"g","g":1,"p":"'$id'"}]' https://eu.api.mega.co.nz/cs`
 
 # get the download url
-new_url=`echo $json_data | awk -F '"' '{print $12}'`
+new_url=`echo $json_data | awk -F '"' '{print $14}'`
 
 # Download, decrypt, clean up
 curl --output $enc_file $new_url
