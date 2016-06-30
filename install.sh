@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
-ansible-playbook play.yml -i attacksible --skip-tags "exploitdb" --connection=local -K
+
+# Update
+git pull --rebase
+
+SKIP="exploitdb"
+
+# Install
+ansible-playbook play.yml -i attacksible --connection=local -K --skip-tags "${SKIP}"
