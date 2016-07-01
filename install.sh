@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Update
-git pull --rebase
+git pull --rebase --recurse
 
 SKIP="exploitdb"
 
