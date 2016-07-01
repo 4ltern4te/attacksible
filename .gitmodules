@@ -1,3 +1,4 @@
 [submodule "roles/rvm1"]
 	path = roles/rvm1
 	url = https://github.com/auraltension/rvm1-ansible.git
+	branch = master
