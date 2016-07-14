@@ -34,28 +34,28 @@
 - name: "Git: airgeddon"
   git:
     repo: https://github.com/v1s1t0r1sh3r3/airgeddon.git
-    dest: est={{ tools_root }}/wireless/wifi/airgeddon
+    dest: "{{ tools_root }}/wireless/wifi/airgeddon"
   tags: gui
 
 - name: "Git: mfcuk"
   git: 
     repo: https://github.com/nfc-tools/mfcuk.git
-    dest: {{ tools_root }}/wireless/rfid/mfcuk
+    dest: "{{ tools_root }}/wireless/rfid/mfcuk"
 
 - name: "Git: mfoc"
   git: 
     repo: https://github.com/nfc-tools/mfoc.git
-    dest: {{ tools_root }}/wireless/rfid/mfoc
+    dest: "{{ tools_root }}/wireless/rfid/mfoc"
 
 - name: "Git: wifijammer"
   git: 
     repo: https://github.com/DanMcInerney/wifijammer.git
-    dest: {{ tools_root }}/wireless/wifi/wifijammer
+    dest: "{{ tools_root }}/wireless/wifi/wifijammer"
 
 - name: "Git: wifite"
   git: 
     repo: https://github.com/derv82/wifite
-    dest: {{ tools_root }}/wireless/wifi/wifite
+    dest: "{{ tools_root }}/wireless/wifi/wifite"
 
 ## No more google code.
 #- name: "reaver-wps"
