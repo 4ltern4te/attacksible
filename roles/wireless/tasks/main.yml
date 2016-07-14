@@ -35,6 +35,7 @@
   git:
     repo: https://github.com/v1s1t0r1sh3r3/airgeddon.git
     dest: est={{ tools_root }}/wireless/wifi/airgeddon
+  tags: gui
 
 - name: "Git: mfcuk"
   git: 
