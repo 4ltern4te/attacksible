@@ -65,6 +65,7 @@
     - golang
     - htop
     - lighttpd
+    - lftp
     - lldb
     - patch
     - p7zip
