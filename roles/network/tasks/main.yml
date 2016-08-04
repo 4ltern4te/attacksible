@@ -71,3 +71,7 @@
 
 - name: "git clone SimpleEmailSpoofer"
   git: repo=https://github.com/lunarca/SimpleEmailSpoofer.git dest={{ tools_root }}/network/SimpleEmailSpoofer
+
+- name: "git clone ssh-audit"
+  git: repo=https://github.com/arthepsy/ssh-audit.git dest={{ tools_root }}/network/ssh-audit
+
