@@ -37,6 +37,7 @@
     - curl
     - keepnote
     - libcapstone-dev
+    - libnetfilter-queue-dev
     - mysql-client
     - postgresql
     - postgresql-server-dev-all
