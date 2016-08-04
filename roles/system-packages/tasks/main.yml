@@ -9,22 +9,22 @@
   with_items:
     - '@Development tools'
     - dhcp
-    - pth
-    - libselinux-python
-    - mysql
-    - postgresql-server
-    - postgresql-devel
-    - python-devel
-    - ruby-devel
-    - rubygem-bundler
     - java-openjdk
-    - net-snmp-utils
-    - vim-enhanced
-    - redhat-rpm-config
     - libpcap
     - libpcap-devel
+    - libselinux-python
+    - mysql
+    - net-snmp-utils
+    - postgresql-devel
+    - postgresql-server
+    - pth
     - pylibpcap
+    - python-devel
     - python-dnf-plugins-core
+    - ruby-devel
+    - rubygem-bundler
+    - redhat-rpm-config
+    - vim-enhanced
     - zlib-devel
     - http://keepnote.org/download/keepnote-0.7.8-1.noarch.rpm
   when: ansible_distribution == 'Fedora'
@@ -34,24 +34,24 @@
 - name: "System packages"
   package: name={{ item }} state=present
   with_items:
+    - bundler
     - curl
     - keepnote
     - libcapstone-dev
     - libnetfilter-queue-dev
+    - libpcap-dev
+    - libsqlite3-dev
     - mysql-client
+    - openjdk-8-jdk
     - postgresql
     - postgresql-server-dev-all
     - python-dev
-    - ruby-dev
-    - bundler
-    - openjdk-8-jdk
-    - snmp
-    - vim
-    - libpcap-dev
     - python-libpcap
-    - zlib1g-dev
+    - ruby-dev
+    - snmp
     - subversion
-    - libsqlite3-dev
+    - vim
+    - zlib1g-dev
   when:
     - ansible_os_family == "Debian"
 
@@ -63,13 +63,15 @@
     - clamav
     - clang
     - ferm
+    - gcc
     - golang
     - htop
     - lighttpd
     - lftp
     - lldb
-    - patch
+    - make
     - p7zip
+    - patch
     - postgresql
     - python
     - python-setuptools
