@@ -1,6 +1,15 @@
 # Hardware Hacking
 
-- name: "Package: minicom"
+- name: "Creating hardware directory"
+  file: path={{ tools_root }}/hardware owner=root group=root state=directory mode=0755
+
+- name: "Get duckencoder for USB Rubber Ducky"
+  get_url: 
+    url: https://github.com/downloads/hak5darren/USB-Rubber-Ducky/duckencode.jar
+    dest: {{ tools_root }}/hardware
+    mode: 0755
+
+- name: "Packages for hardware devices"
   package: name={{ item }} state=present
   with_items:
     - minicom
