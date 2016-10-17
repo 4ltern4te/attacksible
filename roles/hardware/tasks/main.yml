@@ -5,8 +5,8 @@
 
 - name: "Get duckencoder for USB Rubber Ducky"
   get_url: 
-    url: https://github.com/downloads/hak5darren/USB-Rubber-Ducky/duckencode.jar
-    dest: {{ tools_root }}/hardware
+    url: https://github.com/midnitesnake/USB-Rubber-Ducky/raw/master/Encoder/encoder.jar
+    dest: {{ tools_root }}/hardware/duckencode.jar
     mode: 0755
 
 - name: "Packages for hardware devices"
