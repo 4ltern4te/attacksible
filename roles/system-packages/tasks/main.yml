@@ -38,6 +38,7 @@
     - curl
     - keepnote
     - libcapstone-dev
+    - libimage-exiftool-perl
     - libnetfilter-queue-dev
     - libpcap-dev
     - libsqlite3-dev
@@ -48,6 +49,7 @@
     - python-dev
     - python-libpcap
     - ruby-dev
+    - shellcheck
     - snmp
     - subversion
     - vim
@@ -65,6 +67,7 @@
     - ferm
     - gcc
     - golang
+    - ipcalc
     - htop
     - lighttpd
     - lftp
@@ -113,19 +116,9 @@
 - name: "Handy Tools"
   package: name={{ item }} state=present
   with_items:
-    - ipcalculator
     - perl-Image-ExifTool
     - ShellCheck
   when: ansible_distribution == 'Fedora'
-
-## Debian
-- name: "Handy Tools"
-  package: name={{ item }} state=present
-  with_items:
-    - ipcalc
-    - libimage-exiftool-perl
-    - shellcheck
-  when: ansible_os_family == "Debian"
 
 # ALL
 - name: "Handy Tools"
